@@ -10,19 +10,24 @@ import { PortfolioService } from '../service/portfolio-service';
 import { computed, inject } from '@angular/core';
 import { chain, filter } from 'lodash';
 
-import * as staticData from '../../../public/assets/projects.json';
+// import * as staticData from '../../../public/assets/projects.json';
+import { PortfolioCalcsService } from '../service/portfolio-calcs.service';
 
 export type PortfolioState = {
     projectData: Project[];
     loading: boolean;
     query: string;
+    order: 'none' | 'asc' | 'desc';
+    selectedSkills: string[]
 }
 
 const initialPortfolioState: PortfolioState = {
     projectData: [],
     // projectData: (staticData as any).default || staticData,
     loading: false,
-    query: ''
+    query: '',
+    order: 'none',
+    selectedSkills: []
 }
 
 export const PortfolioStore = signalStore(
@@ -42,20 +47,38 @@ export const PortfolioStore = signalStore(
                 patchState(store, (state) => ({
                     query: queryFilter
                 }))
+            },
+            async updateOrderFilter(orderFilter: 'none' | 'asc' | 'desc'){
+                patchState(store, (state) => ({
+                    order: orderFilter
+                }))
+            },
+            async updateSelectedSkills(skillFilter: string[]){
+                patchState(store, (state) => ({
+                    selectedSkills: skillFilter
+                }))
             }
         })
     ),
     withComputed((
         {
             projectData,
-            query
-        }
+            query,
+            order
+        },
+        calcs = inject(PortfolioCalcsService)
     ) => ({
         filteredProjectData: computed(() => {
-            const data: Project[] = chain(projectData())
-                .filter(el => el.title.toLowerCase().includes(query().toLowerCase()))
-                .value();
-            return data;
+            return calcs.getFilteredProjectData(
+                projectData(),
+                query(),
+                order()
+            )
+        }),
+        uniqueSkills: computed(() => {
+            return calcs.getUniqueSkills(
+                projectData()
+            );
         })
     }))
 );

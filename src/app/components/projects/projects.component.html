@@ -7,18 +7,29 @@
     @else {
         <div [formGroup]="projectForm" class="bg-gray-700">
             <div class="flex items-center justify-between">
-                <mat-form-field class="block p-2 mt-1">
+                <mat-form-field 
+                    class="block p-2 mt-1"
+                >
                     <mat-label>Search</mat-label>
                     <input 
                         matInput 
                         type="text" 
                         formControlName="queryFormControl"
-                        (input)="onInput()"
+                        (input)="onQueryInput()"
                         placeholder="Search Keyword"
                     >
                 </mat-form-field>
+                <mat-button-toggle-group 
+                    formControlName="orderFormControl" 
+                    (change)="onOrderButtonToggle($event)"
+                    class="mx-2"
+                >
+                    <mat-button-toggle value="asc" class="!bg-gray-800 !text-white hover:!bg-gray-600">Asc</mat-button-toggle>
+                    <mat-button-toggle value="desc" class="!bg-gray-800 !text-white hover:!bg-gray-600">Desc</mat-button-toggle>
+                </mat-button-toggle-group>
             </div>
         </div>
+        <p>{{ portfolioStore.uniqueSkills() }}</p>
         <div class="grid grid-cols-4 gap-4 p-5 bg-gray-200">
             @for(item of portfolioStore.filteredProjectData(); track $index){
                 <div class="flex items-center h-full">
@@ -31,6 +42,9 @@
                                 <p class="font-medium">{{ item.title }}</p>
                             </div>
                         </mat-card-header>
+                        <mat-card-subtitle>
+                            <p class="text-center px-2 mb-2 font-thin">{{ item.skill }}</p>
+                        </mat-card-subtitle>
                         <mat-card-content>
                             <p class="tracking-wide">{{ item.description }}</p>
                         </mat-card-content>

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { ContainerComponent } from '../container/container.component';
 import { PortfolioStore } from '../../state/portfolio-store';
 import { CommonModule } from '@angular/common';
@@ -8,7 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {MatButtonToggleChange, MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-projects',
@@ -22,17 +22,20 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatFormFieldModule, 
     MatInputModule,
     MatProgressSpinnerModule,
+    MatButtonToggleModule,
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
   providers: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent implements OnInit {
   portfolioStore = inject(PortfolioStore);
   private formBuilder = inject(FormBuilder);
 
   projectForm = this.formBuilder.group({
-    queryFormControl: ['']
+    queryFormControl: [''],
+    orderFormControl: [this.portfolioStore.order()]
   });
 
   ngOnInit(): void {
@@ -43,10 +46,15 @@ export class ProjectsComponent implements OnInit {
     this.portfolioStore.loadStaticProjectData();
   }
 
-  onInput(): void {
+  onQueryInput(): void {
     const query: string = this.projectForm.get("queryFormControl")?.value as string;
     this.portfolioStore.updateQueryFilter(query);
     console.log(this.portfolioStore.query());
+  }
+
+  onOrderButtonToggle(e: MatButtonToggleChange){
+    const order: 'none' | 'asc' | 'desc' = this.projectForm.get("orderFormControl")?.value as 'none' | 'asc' | 'desc';
+    this.portfolioStore.updateOrderFilter(order); 
   }
 
 }
