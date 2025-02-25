@@ -29,7 +29,6 @@
                 </mat-button-toggle-group>
             </div>
         </div>
-        <p>{{ portfolioStore.uniqueSkills() }}</p>
         <div class="grid grid-cols-4 gap-4 p-5 bg-gray-200">
             @for(item of portfolioStore.filteredProjectData(); track $index){
                 <div class="flex items-center h-full">
