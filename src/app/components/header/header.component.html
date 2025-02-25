@@ -1,0 +1,57 @@
+<header class="bg-gray-900 
+    sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3"
+>
+    <div class="flex items-center justify-between px-4 py-3 
+        sm:p-0"
+    >
+        <!-- Website Logo -->
+        <div>
+            <a href="">
+                <img 
+                src="assets/Logo_2-removebg.png"
+                class="h-15"
+            >
+            </a>
+        </div>
+        <!-- Hamburger Menu -->
+        <div class="sm:hidden">
+            <button 
+                mat-icon-button 
+                class="!block !h-full !text-gray-500 focus:!text-white hover:!text-white"
+                (click)="toggleMenu()"
+            >
+                @if(isOpen == false){
+                    <mat-icon>menu</mat-icon>
+                }
+                @else {
+                    <mat-icon>close</mat-icon>
+                }
+            </button>
+        </div>
+    </div>
+    <!-- Navigation Links -->
+    <div 
+        [class]="isOpen ? 'block' : 'hidden'" 
+        class="px-2 pt-2 pb-3 
+            sm:flex" 
+    >
+        <a href="#" 
+            class="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 
+                sm:mt-0 sm:mx-2"
+        >
+            About
+        </a>
+        <a href="/projects"
+            class="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 
+                sm:mt-0 sm:mx-2"
+        >
+            Projects
+        </a>
+        <a href="#"
+            class="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 
+                sm:mt-0 sm:mx-2"
+            >
+                Contact
+            </a>
+    </div>
+</header>

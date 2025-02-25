@@ -1,6 +1,13 @@
 # KunalPortfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+## Project Structure
+
+* Header Component (containing Nav bar)
+* Hero Component
+* About Component
+* Projects Component
+
+> This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
 
 ## Development server
 

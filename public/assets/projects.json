@@ -1,0 +1,86 @@
+[
+    {
+        "title":"My French Learning Blog",
+        "description":"A web application that acts as a frontend to track my french language learning journey. The frontend retrieves the actual blog posts from a separate GitHub Repository that serves as a static-external backend, and then displays it.",
+        "link":"https://github.com/kjeshang/my-french-learning-blog",
+        "image":"assets/Project_MyFrenchLearning.jpg"
+    },
+    {
+        "title":"Maven Analytics Data Projects Website",
+        "description":"A web application that acts as a frontend/portfolio to showcase the various projects completed so far in the Maven Analytics Data Playground Project.",
+        "link":"https://github.com/kjeshang/kunal-maven-analytics-data-projects",
+        "image":"assets/Project_MavenAnalytics.jpg"
+    },
+    {
+        "title":"Maven Analytics Data Playground Project",
+        "description":"A growing collection of completed projects regarding free datasets provided by Maven Analytics that involve data cleaning, analysis, and visualization.",
+        "link":"https://github.com/kjeshang/KunalMavenAnalyticsDataPlayground",
+        "image":"assets/Project_MavenAnalytics.jpg"
+    },
+    {
+        "title":"Nespresso Metropolis Training Matrix Summarization",
+        "description":"A project that extracts text from an expansive Quality, Health & Safety, and Sustainability Employee Memo, and then summarizes & evaluates the text using Machine Learning techniques.",
+        "link":"https://github.com/kjeshang/NespressoMetropolisTrainingMatrixSummarization",
+        "image":"assets/Project_Nespresso.jpeg"
+    },
+    {
+        "title":"Nespresso Metropolis Cash Journal Reconciliation",
+        "description":"A web application designed to assist managers to quickly perform opening & closing cash journal reconciliations for both credit/debit and cash transactions.",
+        "link":"https://github.com/kjeshang/NespressoMetropolisCashJournalReconciliation.git",
+        "image":"assets/Project_Nespresso.jpeg"
+    },
+    {
+        "title":"Nespresso Metropolis Coffee Flavour Reference Guide",
+        "description":"Programmatically generated reference guides that were designed to help sales floor employees convey high level knowledge to customers with speed & detail.",
+        "link":"https://github.com/kjeshang/NespressoMetropolisCoffeeFlavourReferenceGuide",
+        "image":"assets/Project_Nespresso.jpeg"
+    },
+    {
+        "title":"Staples Marine Way Associate Companion Mobile App",
+        "description":"An application designed to assist associates to better understand product lineup, as well as to serve as a referential tool to help connect, share, and partner with customers to meet their requirements.",
+        "link":"https://github.com/kjeshang/StaplesMarineWayAssociateCompanionMobileApp",
+        "image":"assets/Project_StaplesCanada.png"
+    },
+    {
+        "title":"Nespresso Metropolis Customer Review Analysis",
+        "description":"An exploratory sentiment analysis of customer Google Reviews, received between 2019 to 2022, to assess service quality & customer perception to help management pinpoint areas for improvement.",
+        "link":"https://github.com/kjeshang/NespressoMetropolisCustomerReviewAnalysis",
+        "image":"assets/Project_Nespresso.jpeg"
+    },
+    {
+        "title":"Nespresso Metropolis Training App",
+        "description":"A Machine Learning & Natural Language Processing Application designed to both educate about coffee flavour profiles and make recommendations.",
+        "link":"https://github.com/kjeshang/NespressoMetropolisTrainingApp",
+        "image":"assets/Project_Nespresso.jpeg"
+    },
+    {
+        "title":"Zyp Art Gallery Social Media Dashboard Application",
+        "description":"A free and accessible web application designed to serve as a custom dashboard tool to help visualize Facebook & Instagram data and derive social media insights.",
+        "link":"https://github.com/kjeshang/ZypArtGallerySocialMediaDashboard",
+        "image":"assets/Project_ZypArtGallery.jpeg"
+    },
+    {
+        "title":"Zyp Art Gallery Volunteer Connector Web Scraping",
+        "description":"A custom web scraper designed to retreive volunteer interest data per month, and both open and completed volunteer application data on a lifetime basis from the Volunteer Connector portal.",
+        "link":"https://github.com/kjeshang/ZypArtGallery-VolunteerConnectorWebScraping",
+        "image":"assets/Project_ZypArtGallery.jpeg"
+    },
+    {
+        "title":"CEIT SHS 2021 Statistics Exploratory Data Analysis",
+        "description":"An exploratory data analysis of the Students Helping Students 2021 statistics data pertaining to educational technology issues of Douglas College students.",
+        "link":"https://github.com/kjeshang/SHS2021_Statistics-DataAnalysis-Winter2022Co-op",
+        "image":"assets/Project_CEITDouglasCollege.jpeg"
+    },
+    {
+        "title":"Zyp Art Gallery Social Media Data Extraction",
+        "description":"A collection of scripts that can programmatically extract, transform, and load unaggregated Facebook & Instagram data to both CSV and Google Sheets files using Facebook Graph API and Google Sheets API.",
+        "link":"https://github.com/kjeshang/ZypArtGallery-SocialMediaDataExtraction",
+        "image":"assets/Project_ZypArtGallery.jpeg"
+    },
+    {
+        "title":"Cultural Spaces in Vancouver Dashboard",
+        "description":"A dashboard showing the locations of Cultural Places in Vancouver along with visualizations that differentiate locations based on both comparison and size parameters.",
+        "link":"https://kunaljeshang.wordpress.com/douglas-college/csis-3860-data-visualization/?preview_id=789&preview_nonce=8d7b45596e&preview=true",
+        "image":"assets/Project_CulturalSpacesVancouver.jpeg"
+    }
+]
