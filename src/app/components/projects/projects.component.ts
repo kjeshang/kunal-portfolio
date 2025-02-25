@@ -9,6 +9,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonToggleChange, MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatAutocompleteModule, MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
+import {MatChipInputEvent, MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectChange, MatSelectModule} from '@angular/material/select';
 
 @Component({
   selector: 'app-projects',
@@ -23,6 +27,10 @@ import {MatButtonToggleChange, MatButtonToggleModule} from '@angular/material/bu
     MatInputModule,
     MatProgressSpinnerModule,
     MatButtonToggleModule,
+    MatAutocompleteModule,
+    MatChipsModule,
+    MatIconModule,
+    MatSelectModule
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
@@ -35,7 +43,8 @@ export class ProjectsComponent implements OnInit {
 
   projectForm = this.formBuilder.group({
     queryFormControl: [''],
-    orderFormControl: [this.portfolioStore.order()]
+    orderFormControl: [this.portfolioStore.order()],
+    skillsFormControl: [this.portfolioStore.selectedSkills()]
   });
 
   ngOnInit(): void {
@@ -52,9 +61,16 @@ export class ProjectsComponent implements OnInit {
     console.log(this.portfolioStore.query());
   }
 
-  onOrderButtonToggle(e: MatButtonToggleChange){
+  onOrderButtonToggle(e: MatButtonToggleChange): void {
     const order: 'none' | 'asc' | 'desc' = this.projectForm.get("orderFormControl")?.value as 'none' | 'asc' | 'desc';
+    console.log("Order:",e.value);
     this.portfolioStore.updateOrderFilter(order); 
+  }
+
+  onSelectSkill(e: MatSelectChange): void {
+    const selectedSkills: string[] = this.projectForm.get("skillsFormControl")?.value as string[];
+    console.log("Selected Skills:",e.value);
+    this.portfolioStore.updateSelectedSkills(selectedSkills);
   }
 
 }

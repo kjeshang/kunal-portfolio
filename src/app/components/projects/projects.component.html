@@ -6,7 +6,7 @@
     }
     @else {
         <div [formGroup]="projectForm" class="bg-gray-700">
-            <div class="flex items-center justify-between">
+            <div class="flex items-center">
                 <mat-form-field 
                     class="block p-2 mt-1"
                 >
@@ -19,14 +19,29 @@
                         placeholder="Search Keyword"
                     >
                 </mat-form-field>
-                <mat-button-toggle-group 
-                    formControlName="orderFormControl" 
-                    (change)="onOrderButtonToggle($event)"
-                    class="mx-2"
-                >
-                    <mat-button-toggle value="asc" class="!bg-gray-800 !text-white hover:!bg-gray-600">Asc</mat-button-toggle>
-                    <mat-button-toggle value="desc" class="!bg-gray-800 !text-white hover:!bg-gray-600">Desc</mat-button-toggle>
-                </mat-button-toggle-group>
+                <mat-form-field class="block p-2 mt-1">
+                    <mat-label>Skills</mat-label>
+                    <mat-select 
+                        multiple="true"
+                        formControlName="skillsFormControl"
+                        placeholder="Select Skills"
+                        (selectionChange)="onSelectSkill($event)"
+                    >
+                      @for (item of portfolioStore.uniqueSkills(); track item) {
+                        <mat-option [value]="item">{{item}}</mat-option>
+                      }
+                    </mat-select>
+                </mat-form-field>
+                <div class="flex items-center justify-end ml-auto">
+                    <mat-button-toggle-group 
+                        formControlName="orderFormControl" 
+                        (change)="onOrderButtonToggle($event)"
+                        class="mx-2"
+                    >
+                        <mat-button-toggle value="asc" class="!bg-gray-800 !text-white hover:!bg-gray-600">Asc</mat-button-toggle>
+                        <mat-button-toggle value="desc" class="!bg-gray-800 !text-white hover:!bg-gray-600">Desc</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
             </div>
         </div>
         <div class="grid grid-cols-4 gap-4 p-5 bg-gray-200">

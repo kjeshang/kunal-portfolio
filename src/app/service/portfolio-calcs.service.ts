@@ -21,27 +21,23 @@ export class PortfolioCalcsService {
     getFilteredProjectData(
         projectData: Project[],
         query: string,
-        order: 'none' | 'asc' | 'desc'
+        order: 'none' | 'asc' | 'desc',
+        selectedSkills: string[]
     ): Project[]{
-        let data: Project[] = []
+        let data: Project[] = chain(projectData)
+            .filter(el => el.title.toLowerCase().includes(query.toLowerCase()))
+            .filter(el => selectedSkills.includes(el.skill) || selectedSkills.length == 0)
+            .value();
+
             switch(order){
                 case 'desc':
-                    data = chain(projectData)
-                        .filter(el => el.title.toLowerCase().includes(query.toLowerCase()))
-                        .sortBy(["title"])
-                        .reverse()
-                        .value();
+                    data = chain(data).sortBy(["title"]).reverse().value();
                     break;
                 case 'asc':
-                    data = chain(projectData)
-                        .filter(el => el.title.toLowerCase().includes(query.toLowerCase()))
-                        .sortBy(["title"])
-                        .value();
+                    data = chain(data).sortBy(["title"]).value();
                     break;
                 default:
-                    data = chain(projectData)
-                        .filter(el => el.title.toLowerCase().includes(query.toLowerCase()))
-                        .value();
+                    data = chain(data).value();
                     break;
             }
         return data;

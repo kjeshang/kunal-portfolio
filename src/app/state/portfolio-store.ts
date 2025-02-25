@@ -36,12 +36,15 @@ export const PortfolioStore = signalStore(
     withMethods(
         (
             store,
-            db = inject(PortfolioService)
+            db = inject(PortfolioService),
         ) => ({
             async loadStaticProjectData(){
                 patchState(store, {loading: true})
-                const projectData = await db.fetchStaticProjectData();
-                patchState(store, {projectData, loading: false});
+                const projectData: Project[] = await db.fetchStaticProjectData();
+                patchState(store, (state) => ({
+                    projectData: projectData, 
+                    loading: false, 
+                }));
             },
             async updateQueryFilter(queryFilter: string){
                 patchState(store, (state) => ({
@@ -64,7 +67,8 @@ export const PortfolioStore = signalStore(
         {
             projectData,
             query,
-            order
+            order,
+            selectedSkills
         },
         calcs = inject(PortfolioCalcsService)
     ) => ({
@@ -72,7 +76,8 @@ export const PortfolioStore = signalStore(
             return calcs.getFilteredProjectData(
                 projectData(),
                 query(),
-                order()
+                order(),
+                selectedSkills()
             )
         }),
         uniqueSkills: computed(() => {
