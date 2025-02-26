@@ -18,7 +18,8 @@ export type PortfolioState = {
     loading: boolean;
     query: string;
     order: 'none' | 'asc' | 'desc';
-    selectedSkills: string[]
+    selectedSkills: string[],
+    selectedTechnologies: string[]
 }
 
 const initialPortfolioState: PortfolioState = {
@@ -27,7 +28,8 @@ const initialPortfolioState: PortfolioState = {
     loading: false,
     query: '',
     order: 'none',
-    selectedSkills: []
+    selectedSkills: [],
+    selectedTechnologies: []
 }
 
 export const PortfolioStore = signalStore(
@@ -60,6 +62,11 @@ export const PortfolioStore = signalStore(
                 patchState(store, (state) => ({
                     selectedSkills: skillFilter
                 }))
+            },
+            async updateSelectedTechnologies(technologyFilter: string[]){
+                patchState(store, (state) => ({
+                    selectedTechnologies: technologyFilter
+                }))
             }
         })
     ),
@@ -68,7 +75,8 @@ export const PortfolioStore = signalStore(
             projectData,
             query,
             order,
-            selectedSkills
+            selectedSkills,
+            selectedTechnologies
         },
         calcs = inject(PortfolioCalcsService)
     ) => ({
@@ -77,13 +85,19 @@ export const PortfolioStore = signalStore(
                 projectData(),
                 query(),
                 order(),
-                selectedSkills()
+                selectedSkills(),
+                selectedTechnologies()
             )
         }),
         uniqueSkills: computed(() => {
             return calcs.getUniqueSkills(
                 projectData()
             );
+        }),
+        uniqueTechnologies: computed(() => {
+            return calcs.getUniqueTechnologies(
+                projectData()
+            )
         })
     }))
 );

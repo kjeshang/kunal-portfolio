@@ -9,7 +9,7 @@
             <a href="">
                 <img 
                 src="assets/Logo_2-removebg.png"
-                class="h-15"
+                class="h-15 hover:bg-gray-600"
             >
             </a>
         </div>
@@ -47,11 +47,13 @@
         >
             Projects
         </a>
-        <a href="#"
-            class="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 
+        <button>
+            <a class="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 
                 sm:mt-0 sm:mx-2"
+               (click)="openContactDialog()"
             >
                 Contact
             </a>
+        </button>
     </div>
 </header>

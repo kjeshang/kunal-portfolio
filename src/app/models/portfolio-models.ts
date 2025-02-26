@@ -4,5 +4,5 @@ export interface Project {
     link: string;
     image: string;
     skill: string;
-    technology?: string[]
+    technology: string
 }
