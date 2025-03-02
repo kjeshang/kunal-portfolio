@@ -26,6 +26,7 @@ export class HeaderComponent {
       width: '80vw',
       maxWidth: '900px',
       height: 'auto',
+      ariaLabel:"Contact Dialog"
     });
   }
 

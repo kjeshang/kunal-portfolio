@@ -3,11 +3,23 @@
         <div class="block mb-50 p-3">
             <h1 class="text-6xl text-white text-center font-bold py-2">Kunal Jeshang</h1>
             <h3 class="text-lg text-white text-center font-thin">Data Analyst & Business Intelligence Developer</h3>
-            <ul class="flex items-center justify-between text-white">
-                <li>GitHub</li>
-                <li>LinkedIn</li>
-                <li>WordPress</li>
-            </ul>
+            <div class="flex items-center justify-center py-5 sm:hidden">
+                <button mat-flat-button (click)="openBottomSheet()" class="!bg-gray-700">
+                    Connect with Me
+                </button>
+            </div>
+            <div class="hidden sm:flex items-center justify-center">
+            <div class="grid grid-cols-2 my-5 sm:grid-cols-4 sm:gap-4 ">
+                @for(item of socialMedia; track $index){
+                    <div class="flex flex-row items-center p-3 sm:px-5">
+                        <img [src]="item.image1" class="w-6 h-6 mx-2" />
+                        <a [href]="item.link" target="_blank" class="text-black-500 text-white hover:bg-gray-600 p-1">
+                            {{ item.label }}
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
         </div>
     </div>
 </app-container>

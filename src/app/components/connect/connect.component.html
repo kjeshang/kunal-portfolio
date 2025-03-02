@@ -1,0 +1,17 @@
+<ul>
+    @for(item of data.socialMedia; track $index){
+        <li class="py-3">
+            <div class="flex flex-row items-center mx-auto">
+                <img [src]="item.image2" class="w-6 h-6 mx-2" />
+                <a 
+                    [href]="item.link" 
+                    target="_blank" 
+                    (click)="openLink($event)"
+                    class="text-black-500 hover:underline"
+                >
+                    {{ item.label }}
+                </a>
+            </div>
+        </li>
+    }
+</ul>
