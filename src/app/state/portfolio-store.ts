@@ -12,6 +12,7 @@ import { chain, filter } from 'lodash';
 
 // import * as staticData from '../../../public/assets/projects.json';
 import { PortfolioCalcsService } from '../service/portfolio-calcs.service';
+import { PortfolioChartService } from '../service/portfolio-chart.service';
 
 export type PortfolioState = {
     projectData: Project[];
@@ -78,7 +79,8 @@ export const PortfolioStore = signalStore(
             selectedSkills,
             selectedTechnologies
         },
-        calcs = inject(PortfolioCalcsService)
+        calcs = inject(PortfolioCalcsService),
+        chartCalcs = inject(PortfolioChartService)
     ) => ({
         filteredProjectData: computed(() => {
             return calcs.getFilteredProjectData(
@@ -98,6 +100,16 @@ export const PortfolioStore = signalStore(
             return calcs.getUniqueTechnologies(
                 projectData()
             )
+        }),
+        skillChart: computed(() => {
+            return chartCalcs.getSkillBarChartData(
+                projectData()
+            );
+        }),
+        technologyChart: computed(() => {
+            return chartCalcs.getTechnologyBarChartData(
+                projectData()
+            );
         })
     }))
 );

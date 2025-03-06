@@ -6,3 +6,13 @@ export interface Project {
     skill: string;
     technology: string
 }
+
+export interface PlotlyBarChartData {
+    x: string[],
+    y: number[],
+    title: string
+}
+
+export interface PlotlyPieChartData {
+
+}
