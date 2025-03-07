@@ -5,10 +5,11 @@ import { PortfolioStore } from '../../state/portfolio-store';
 import { PlotlyPieChartComponent } from '../plotly-pie-chart/plotly-pie-chart.component';
 import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about',
-  imports: [MatExpansionModule, MatButtonModule, ContainerComponent, PlotlyBarChartComponent, PlotlyPieChartComponent],
+  imports: [CommonModule, MatExpansionModule, MatButtonModule, ContainerComponent, PlotlyBarChartComponent, PlotlyPieChartComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

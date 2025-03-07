@@ -8,15 +8,16 @@ import {
 import { Career, Project } from '../models/portfolio-models';
 import { PortfolioService } from '../service/portfolio-service';
 import { computed, inject } from '@angular/core';
-import { chain, filter } from 'lodash';
 
 import { PortfolioCalcsService } from '../service/portfolio-calcs.service';
 import { PortfolioChartService } from '../service/portfolio-chart.service';
 
 export type PortfolioState = {
+    // Loading Related
     projectData: Project[];
     careerData: Career[];
     loading: boolean;
+    // Project Page Related
     query: string;
     order: 'none' | 'asc' | 'desc';
     selectedSkills: string[],
@@ -24,9 +25,11 @@ export type PortfolioState = {
 }
 
 const initialPortfolioState: PortfolioState = {
+    // Loading Related
     projectData: [],
     careerData: [],
     loading: false,
+    // Project Page Related
     query: '',
     order: 'none',
     selectedSkills: [],
