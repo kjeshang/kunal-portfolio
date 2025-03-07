@@ -14,14 +14,32 @@
         </div>
     </div>
     <div class="p-5">
-        <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
-            <div class="sm:px-2">
-                <app-plotly-bar-chart [inputData]="portfolioStore.skillChart()"></app-plotly-bar-chart>
-            </div>
-            <div class="sm:px-2">
-                <app-plotly-bar-chart [inputData]="portfolioStore.technologyChart()"></app-plotly-bar-chart>
-            </div>
-        </div>
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Technical Expertise</mat-panel-title>
+                    <mat-panel-description class="!hidden sm:!block">
+                        <p class="font-light">This section is a graphical summary of my skills and technological experience</p>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
+                    <div class="sm:p-2">
+                        <app-plotly-bar-chart [inputData]="portfolioStore.skillChart()"></app-plotly-bar-chart>
+                    </div>
+                    <div class="sm:p-2">
+                        <app-plotly-pie-chart [inputData]="portfolioStore.technologyChart()"></app-plotly-pie-chart>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Career Timeline</mat-panel-title>
+                    <mat-panel-description class="!hidden sm:!block">
+                        <p class="font-light">This section is a graphical representation of my work history and education</p>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+        </mat-accordion>
     </div>
 </app-container>
 

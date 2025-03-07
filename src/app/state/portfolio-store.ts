@@ -107,7 +107,7 @@ export const PortfolioStore = signalStore(
             );
         }),
         technologyChart: computed(() => {
-            return chartCalcs.getTechnologyBarChartData(
+            return chartCalcs.getTechnologyPieChartData(
                 projectData()
             );
         })

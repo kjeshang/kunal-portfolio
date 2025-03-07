@@ -4,15 +4,17 @@ export interface Project {
     link: string;
     image: string;
     skill: string;
-    technology: string
+    technology: string;
 }
 
 export interface PlotlyBarChartData {
-    x: string[],
-    y: number[],
-    title: string
+    x: string[];
+    y: number[];
+    title: string;
 }
 
 export interface PlotlyPieChartData {
-
+    labels: string[];
+    values: number[];
+    title: string;
 }
