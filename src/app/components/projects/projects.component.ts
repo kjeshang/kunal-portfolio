@@ -56,7 +56,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   async loadProjects(): Promise<void>{
-    this.portfolioStore.loadStaticProjectData();
+    this.portfolioStore.loadProjectData();
   }
 
   onQueryInput(): void {

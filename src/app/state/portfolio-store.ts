@@ -41,9 +41,10 @@ export const PortfolioStore = signalStore(
             store,
             db = inject(PortfolioService),
         ) => ({
-            async loadStaticProjectData(){
+            async loadProjectData(){
                 patchState(store, {loading: true})
-                const projectData: Project[] = await db.fetchStaticProjectData();
+                // const projectData: Project[] = await db.fetchStaticProjectData();
+                const projectData: Project[] = await db.getDataForProjects();
                 patchState(store, (state) => ({
                     projectData: projectData, 
                     loading: false, 

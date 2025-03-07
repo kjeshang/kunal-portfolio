@@ -22,6 +22,7 @@ export class PlotlyBarChartComponent implements OnChanges {
         type:'bar'
       }
     ],
+    height:0,
     layout: {
       title:{text:''},
       xaxis:{visible:true},
@@ -35,6 +36,7 @@ export class PlotlyBarChartComponent implements OnChanges {
       this.graph.data[0].x = this.inputData.x as never[];
       this.graph.data[0].y = this.inputData.y as never[];
       this.graph.layout.title.text = this.inputData.title;
+      this.graph.height = this.inputData.height;
     }
   }
 }

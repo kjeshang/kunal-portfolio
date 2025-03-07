@@ -23,7 +23,8 @@ export class PortfolioChartService {
         const chartData: PlotlyBarChartData = {
             x:data.map(item => item.skill),
             y:data.map(item => item.count),
-            title:'Skills'
+            title:'Skills',
+            height:400
         }
         return chartData;
     }
@@ -69,7 +70,8 @@ export class PortfolioChartService {
         const chartData: PlotlyBarChartData = {
             x:data.map(item => item.technology),
             y:data.map(item => item.count),
-            title:'Technology'
+            title:'Technology',
+            height:300
         }
         return chartData;
     }
