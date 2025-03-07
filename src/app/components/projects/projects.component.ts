@@ -39,7 +39,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent {
   portfolioStore = inject(PortfolioStore);
   private _snackBar = inject(MatSnackBar);
   private formBuilder = inject(FormBuilder);
@@ -50,14 +50,6 @@ export class ProjectsComponent implements OnInit {
     skillsFormControl: [this.portfolioStore.selectedSkills()],
     technologieFormControl: [this.portfolioStore.selectedTechnologies()]
   });
-
-  ngOnInit(): void {
-    this.loadProjects().then(() => console.log("Projects Loaded!"));
-  }
-
-  async loadProjects(): Promise<void>{
-    this.portfolioStore.loadProjectData();
-  }
 
   onQueryInput(): void {
     const query: string = this.projectForm.get("queryFormControl")?.value as string;

@@ -1,0 +1,62 @@
+[
+    {
+        "type":"Job",
+        "position":"Software Developer",
+        "company":"A-Mais Technologies Inc. (“Amiga”)",
+        "startDate":"Jan 2025",
+        "endDate":"Current",
+        "location":"North Vancouver, British Columbia, Canada - Remote",
+        "description":[],
+        "skills":[],
+        "link":"",
+        "logo":""
+    },
+    {
+        "type":"Job",
+        "position":"Team Leader",
+        "company":"Nestle Nespresso S.A.",
+        "startDate":"Sep 2023",
+        "endDate":"Jan 2025",
+        "location":"Burnaby, British Columbia, Canada",
+        "description":[],
+        "skills":[],
+        "link":"https://kunaljeshang.wordpress.com/nestle-nespresso-s-a/team-leader/",
+        "logo":""
+    },
+    {
+        "type":"Job",
+        "position":"Coffee Specialist",
+        "company":"Nestle Nespresso S.A.",
+        "startDate":"Jun 2021",
+        "endDate":"Sep 2023",
+        "location":"Burnaby, British Columbia, Canada",
+        "description":[],
+        "skills":[],
+        "link":"https://kunaljeshang.wordpress.com/nestle-nespresso-s-a/coffee-specialist/",
+        "logo":""
+    },
+    {
+        "type":"Job",
+        "position":"Online Data Analyst",
+        "company":"TELUS International AI Data Solutions",
+        "startDate":"May 2023",
+        "endDate":"Feb 2024",
+        "location":"Vancouver, British Columbia, Canada - Remote",
+        "description":[],
+        "skills":[],
+        "link":"",
+        "logo":""
+    },
+    {
+        "type":"Job",
+        "position":"Technology Sales Area Representative",
+        "company":"Staples Canada",
+        "startDate":"May 2023",
+        "endDate":"Sep 2023",
+        "location":"Burnaby, British Columbia, Canada",
+        "description":[],
+        "skills":[],
+        "link":"",
+        "logo":""
+    }
+]

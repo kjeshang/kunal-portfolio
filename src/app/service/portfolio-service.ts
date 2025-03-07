@@ -1,7 +1,7 @@
 import { inject, Injectable } from "@angular/core";
-import { Project } from "../models/portfolio-models";
+import { Career, Project } from "../models/portfolio-models";
 
-import * as staticData from '../../../public/assets/data_projects.json';
+import * as staticProjectData from '../../../public/assets/data_projects.json';
 import { firstValueFrom } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 
@@ -13,13 +13,21 @@ export class PortfolioService {
 
     async fetchStaticProjectData(): Promise<Project[]>{
         await sleep(1000);
-        return (staticData as any).default || staticData;
+        return (staticProjectData as any).default || staticProjectData;
     }
 
     async getDataForProjects(): Promise<Project[]> {
         const filepath: string = "assets/data_projects.json";
         const data: Project[] = await firstValueFrom(
             this.http.get<Project[]>(filepath)
+        );
+        return data;
+    }
+
+    async getDataForCareer(): Promise<Career[]>{
+        const filepath: string = "assets/data_career.json";
+        const data: Career[] = await firstValueFrom(
+            this.http.get<Career[]>(filepath)
         );
         return data;
     }

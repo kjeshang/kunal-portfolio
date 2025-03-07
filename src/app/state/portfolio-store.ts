@@ -5,17 +5,17 @@ import {
     withMethods,
     withState,
 } from '@ngrx/signals';
-import { Project } from '../models/portfolio-models';
+import { Career, Project } from '../models/portfolio-models';
 import { PortfolioService } from '../service/portfolio-service';
 import { computed, inject } from '@angular/core';
 import { chain, filter } from 'lodash';
 
-// import * as staticData from '../../../public/assets/projects.json';
 import { PortfolioCalcsService } from '../service/portfolio-calcs.service';
 import { PortfolioChartService } from '../service/portfolio-chart.service';
 
 export type PortfolioState = {
     projectData: Project[];
+    careerData: Career[];
     loading: boolean;
     query: string;
     order: 'none' | 'asc' | 'desc';
@@ -25,7 +25,7 @@ export type PortfolioState = {
 
 const initialPortfolioState: PortfolioState = {
     projectData: [],
-    // projectData: (staticData as any).default || staticData,
+    careerData: [],
     loading: false,
     query: '',
     order: 'none',
@@ -41,15 +41,24 @@ export const PortfolioStore = signalStore(
             store,
             db = inject(PortfolioService),
         ) => ({
+            // Loading Related
             async loadProjectData(){
                 patchState(store, {loading: true})
-                // const projectData: Project[] = await db.fetchStaticProjectData();
                 const projectData: Project[] = await db.getDataForProjects();
                 patchState(store, (state) => ({
                     projectData: projectData, 
                     loading: false, 
                 }));
             },
+            async loadCareerData(){
+                patchState(store, {loading: true})
+                const careerData: Career[] = await db.getDataForCareer();
+                patchState(store, (state) => ({
+                    careerData: careerData, 
+                    loading: false, 
+                }));
+            },
+            // Project Page Related
             async updateQueryFilter(queryFilter: string){
                 patchState(store, (state) => ({
                     query: queryFilter

@@ -12,15 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
   portfolioStore = inject(PortfolioStore);
   accordion = viewChild.required(MatAccordion);
-
-  ngOnInit(): void {
-    this.loadProjects().then(() => console.log("Projects Loaded!"));
-  }
-
-  async loadProjects(): Promise<void>{
-    this.portfolioStore.loadProjectData();
-  }
 }
