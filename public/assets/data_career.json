@@ -9,7 +9,7 @@
         "description":[],
         "skills":[],
         "link":"",
-        "logo":""
+        "logo":"assets/Job_AmaisTechnologies.png"
     },
     {
         "type":"Job",
@@ -21,7 +21,7 @@
         "description":[],
         "skills":[],
         "link":"https://kunaljeshang.wordpress.com/nestle-nespresso-s-a/team-leader/",
-        "logo":""
+        "logo":"assets/Job_Nespresso.jpeg"
     },
     {
         "type":"Job",
@@ -30,10 +30,13 @@
         "startDate":"Jun 2021",
         "endDate":"Sep 2023",
         "location":"Burnaby, British Columbia, Canada",
-        "description":[],
+        "description":[
+            "● Built a content-based coffee flavor recommendation engine in the guise of a proof-of-concept web-based training platform, using Python and the Pandas, Numpy, NLTK, Scikit Learn, Matplotlib, Seaborn, WordCloud, Plotly, and Dash packages, and received positive reviews from management regarding its accuracy and applicability to training new hires.",
+            "● Conducted an in-depth analysis of historical Google reviews, between 2019 to 2022, to assist management in better understanding customer perception of service quality & business operations, as well as retrieve constructive feedback to pinpoint areas for improvement."
+        ],
         "skills":[],
         "link":"https://kunaljeshang.wordpress.com/nestle-nespresso-s-a/coffee-specialist/",
-        "logo":""
+        "logo":"assets/Job_Nespresso.jpeg"
     },
     {
         "type":"Job",
@@ -42,10 +45,12 @@
         "startDate":"May 2023",
         "endDate":"Feb 2024",
         "location":"Vancouver, British Columbia, Canada - Remote",
-        "description":[],
+        "description":[
+            "● Demonstrated exceptional research skills by efficiently gathering and validating data from diverse online sources, including search engines, online maps, and websites, leading to accurate and up-to-date information for user search queries."
+        ],
         "skills":[],
         "link":"",
-        "logo":""
+        "logo":"assets/Job_TelusInternationalAIDataSolutions.jpeg"
     },
     {
         "type":"Job",
@@ -54,9 +59,42 @@
         "startDate":"May 2023",
         "endDate":"Sep 2023",
         "location":"Burnaby, British Columbia, Canada",
-        "description":[],
+        "description":[
+            "● Developed an Android mobile application, using Java with an SQLite database, to assist associates in better understanding product lineup, and to serve as a referential tool to help connect, share, and partner with customers to meet their requirements."
+        ],
         "skills":[],
         "link":"",
-        "logo":""
+        "logo":"assets/Job_StaplesCanada.png"
+    },
+    {
+        "type":"Job",
+        "position":"Data Analyst",
+        "company":"Zyp Art Gallery",
+        "startDate":"Jun 2021",
+        "endDate":"Dec 2022",
+        "location":"Calmar, Alberta, Canada - Remote",
+        "description":[
+            "● Improved data availability & integrity by programmatically extracting previously unavailable unaggregated Facebook & Instagram data to both CSV and Google Sheets files on a weekly basis, using Python and the Pandas, Datetime, Requests, Gspread packages, along with the Facebook Graph API and Google Sheets API.",
+            "● Decreased overall expenditure of the organization by developing a free & accessible custom web-based dashboard tool designed to visualize social media data to derive insights, which is deployed online via Heroku, using Python and the Pandas, Numpy, Datetime, Plotly, Dash, Flask, and Gunicorn packages."
+        ],
+        "skills":[],
+        "link":"https://kunaljeshang.wordpress.com/zyp-art-gallery/",
+        "logo":"assets/Job_ZypArtGallery.jpeg"
+    },
+    {
+        "type":"Job",
+        "position":"CEIT Student Support Assistant",
+        "company":"Douglas College",
+        "startDate":"Aug 2021",
+        "endDate":"Apr 2022",
+        "location":"New Westminster, British Columbia, Canada",
+        "description":[
+            "● Alleviated 80% of manual workload by automating monthly Excel reporting regarding student technology queries, using Python and the Pandas, Numpy, and Scipy packages, to reallocate focus on creating Visme/PowerBI reports.",
+            "● Streamlined cross-team coordination of the CEIT Department to maintain college-wide technology infrastructure by constructing an employee status system that is hosted on Confluence, using HTML, PHP, CSS, Bootstrap, JavaScript, jQuery, Ajax, and a MySQL database.",
+            "● Developed an executable prototype mentor-mentee matching algorithm for Douglas College International’s mentorship program to ensure the successful transition of new International students to Canadian life and post-secondary education, using Python and the Pandas, Scikit Learn, NLTK, and Pyinstaller packages."
+        ],
+        "skills":[],
+        "link":"https://kunaljeshang.wordpress.com/ceit-douglas-college-co-op/",
+        "logo":"assets/Job_CEITDouglasCollege.jpeg"
     }
 ]

@@ -77,13 +77,13 @@
         >
             @for(item of portfolioStore.filteredProjectData(); track $index){
                 <div class="flex items-center h-full">
-                    <mat-card appearance="outlined">
+                    <mat-card appearance="outlined" class="my-auto h-full">
                         <mat-card-header>
                             <div mat-card-avatar>
                                 <img mat-card-image [src]="item.image" class="h-10 w-15">
                             </div>
                             <div class="flex items-center px-2 mb-3 text-center">
-                                <p class="font-medium">{{ item.title }}</p>
+                                <p class="font-semibold">{{ item.title }}</p>
                             </div>
                         </mat-card-header>
                         <mat-card-subtitle>

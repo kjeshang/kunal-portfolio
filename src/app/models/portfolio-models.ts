@@ -27,8 +27,8 @@ export interface Career {
     startDate: string;
     endDate: string; // [End Date] | Current
     location: string;
-    description?: string[]; // Resume points and/or list of educational awareness, extracurriculars, etc.
-    skills?: string[]; // Soft skills
-    link?: string; // External link containing detailed account of achievements & responsabilities,
+    description: string[]; // Job highlights and/or list of educational activities, extracurriculars, etc.
+    skills: string[]; // Soft skills
+    link: string; // External link containing detailed account of achievements & responsabilities,
     logo: string; // Company/Educational Institution logo
 }

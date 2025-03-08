@@ -20,22 +20,38 @@
                 </mat-icon>
                 <mat-card class="mx-6 my-2 p-6 rounded-md shadow-md w-full">
                     <mat-card-header>
-                        <mat-card-title-group class="flex-col">
-                            <p class="font-bold">{{ item.position }}</p>
-                            <p>{{ item.company }}</p>
-                            <p class="font-light">{{ item.startDate }} - {{ item.endDate }}</p>
-                            <p class="font-light">{{ item.location }}</p>
+                        <mat-card-title-group class="flex flex-col gap-4">
+                            <div class="flex flex-wrap">
+                                <div mat-card-avatar class="mx-2">
+                                    <img mat-card-image [src]="item.logo" class="h-10 w-15" />
+                                </div>
+                                <div class="mx-2">
+                                    <p class="font-bold">{{ item.position }}</p>
+                                    <p>{{ item.company }}</p>
+                                </div>
+                            </div>
                         </mat-card-title-group>
                     </mat-card-header>
-                    <mat-card-content>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem possimus voluptate deleniti, voluptas sunt rerum beatae dolor cumque aliquid recusandae praesentium veritatis aliquam a qui blanditiis ullam laboriosam, amet quos?
+                    <mat-card-subtitle class="px-6">
+                        <p class="font-light">{{ item.startDate }} - {{ item.endDate }}</p>
+                        <p class="font-light">{{ item.location }}</p>
+                    </mat-card-subtitle>
+                    <mat-card-content class="m-2">
+                        @if(item.description.length > 0){
+                            <ul>
+                                @for(desc of item.description; track $index){
+                                    <li class="mb-1">{{ desc }}</li>
+                                }
+                            </ul>
+                        }
                     </mat-card-content>
                         <mat-card-footer>
                             @if(item.link !== ''){
                                 <mat-card-actions>
-                                    <button mat-button>
+                                    <button mat-raised-button>
                                         <a [href]="item.link" target="_blank">
-                                            Click Here to view more information
+                                            <span class="hidden sm:block">Job Responsibilities, Accomplishments, Projects</span>
+                                            <span class="block sm:hidden">More Information</span>
                                         </a>
                                     </button>
                                 </mat-card-actions>
