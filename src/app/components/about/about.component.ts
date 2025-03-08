@@ -6,10 +6,11 @@ import { PlotlyPieChartComponent } from '../plotly-pie-chart/plotly-pie-chart.co
 import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { TimelineComponent } from '../timeline/timeline.component';
 
 @Component({
   selector: 'app-about',
-  imports: [CommonModule, MatExpansionModule, MatButtonModule, ContainerComponent, PlotlyBarChartComponent, PlotlyPieChartComponent],
+  imports: [CommonModule, MatExpansionModule, MatButtonModule, ContainerComponent, PlotlyBarChartComponent, PlotlyPieChartComponent, TimelineComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
