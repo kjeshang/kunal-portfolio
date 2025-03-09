@@ -96,5 +96,113 @@
         "skills":[],
         "link":"https://kunaljeshang.wordpress.com/ceit-douglas-college-co-op/",
         "logo":"assets/Job_CEITDouglasCollege.jpeg"
+    },
+    {
+        "type":"Job",
+        "position":"Teaching Assistant, Statistics Workshop",
+        "company":"Simon Fraser University",
+        "startDate":"Sep 2019",
+        "endDate":"Dec 2019",
+        "location":"Burnaby, British Columbia, Canada",
+        "description":[
+            "● Assisted students with calculations, concepts, and R-programming queries, for several introductory-core statistics courses on an ad-hoc basis at the statistics workshop, and as result, regularly received a positive response for my detailed explanations and encouraging nature"
+        ],
+        "skills":[],
+        "link":"",
+        "logo":"assets/Job_SimonFraserUniversity.png"
+    },
+    {
+        "type":"Job",
+        "position":"Finance Intern",
+        "company":"Phoenix Assurance",
+        "startDate":"Apr 2019",
+        "endDate":"Jun 2019",
+        "location":"Dar-es-Salaam, Tanzania",
+        "description":[
+            "● Slashed completion time of deliverables that require long-tedious work & complex analyses from several workdays to a few minutes by implementing automated business solutions in the form of macro-enabled spreadsheets using Excel VBA."
+        ],
+        "skills":[],
+        "link":"https://kunaljeshang.wordpress.com/finance-internship-at-phoenix-assurance-of-tanzania/?_gl=1*19k09y8*_gcl_au*MjEwOTY4NTkyOS4xNzQxNTUzMjI0",
+        "logo":"assets/Job_PhoenixAssurance.jpeg"
+    },
+    {
+        "type":"Job",
+        "position":"Operations Assistant",
+        "company":"Indo African Auto Parts Ltd",
+        "startDate":"Nov 2018",
+        "endDate":"Mar 2019",
+        "location":"Dar-es-Salaam, Tanzania",
+        "description":[],
+        "skills":[],
+        "link":"",
+        "logo":"assets/Job_IndoAfricanAutoParts.png"
+    },
+    {
+        "type":"Job",
+        "position":"Student Alumni Ambassador",
+        "company":"Fox School of Business at Temple University",
+        "startDate":"Aug 2016",
+        "endDate":"Dec 2016",
+        "location":"Philadelphia, Pennsylvania, USA",
+        "description":[],
+        "skills":[],
+        "link":"",
+        "logo":"assets/Job_TempleUniversity.png"
+    },
+    {
+        "type":"Job",
+        "position":"Insurance Clerk",
+        "company":"MIC Global Risks (Tanzania) Limited",
+        "startDate":"Mar 2016",
+        "endDate":"Jun 2016",
+        "location":"Dar-es-Salaam, Tanzania",
+        "description":[],
+        "skills":[],
+        "link":"",
+        "logo":"assets/Job_MICGlobalRisks.png"
+    },
+    {
+        "type":"Job",
+        "position":"Claims Assistant",
+        "company":"Alliance Insurance Corporation Limited",
+        "startDate":"Jun 2015",
+        "endDate":"Jul 2015",
+        "location":"Dar-es-Salaam, Tanzania",
+        "description":[],
+        "skills":[],
+        "link":"",
+        "logo":"assets/Job_AllianceInsuranceCorporation.jpeg"
+    },
+    {
+        "type":"Student",
+        "position":"Post-Baccalaureate Diploma, Computer & Information Systems - Data Analytics",
+        "company":"Douglas College",
+        "startDate":"May 2020",
+        "endDate":"Dec 2022",
+        "location":"New Westminster, British Columbia, Canada",
+        "description":[
+            "● Institutional Honours: Graduation Distinction",
+            "● Honour Roll (Fall 2020, Winter 2021, Summer 2021, Summer 2022)"
+        ],
+        "skills":[],
+        "link":"https://kunaljeshang.wordpress.com/douglas-college/",
+        "logo":"assets/Student_DouglasCollege.jpeg"
+    },
+    {
+        "type":"Student",
+        "position":"Bachelor of Business Administration, Actuarial Science",
+        "company":"Temple University",
+        "startDate":"Aug 2014",
+        "endDate":"May 2018",
+        "location":"Philadelphia, Pennsylvania, USA",
+        "description":[
+            "● Merit Award",
+            "● Deans List (Fall 2015, Fall 2017)",
+            "● Gamma Iota Sigma – Risk Management & Actuarial Science Student Professional Organization, Temple University",
+            "● Fox Peer Mentor, Temple University (August 2016 – December 2016)"
+        ],
+        "skills":[],
+        "link":"https://kunaljeshang.wordpress.com/professional-stuff/",
+        "logo":"assets/Student_TempleUniversity.png"
     }
 ]

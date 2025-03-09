@@ -21,7 +21,7 @@ export interface PlotlyPieChartData {
 }
 
 export interface Career {
-    type: string; // Job | Student | Volunteer
+    type: string; // Job | Student
     position: string; // [Job Title] | [Name of Degree Qualification]
     company: string; // [Name of Employer] | [Name of Educational Institution]
     startDate: string;

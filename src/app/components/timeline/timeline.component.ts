@@ -3,7 +3,6 @@ import { PortfolioStore } from '../../state/portfolio-store';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import { Career } from '../../models/portfolio-models';
 
 @Component({
   selector: 'app-timeline',
