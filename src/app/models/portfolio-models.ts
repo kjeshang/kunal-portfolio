@@ -32,3 +32,8 @@ export interface Career {
     link: string; // External link containing detailed account of achievements & responsabilities,
     logo: string; // Company/Educational Institution logo
 }
+
+export interface CareerView extends Career {
+    parsedStartDate: number;
+    parsedEndDate: number;
+}

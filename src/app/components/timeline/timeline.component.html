@@ -1,6 +1,6 @@
 <section class="min-h-screen flex w-full">
     <div class="grid grid-cols-1 w-full">
-        @for(item of portfolioStore.careerData(); track $index){
+        @for(item of portfolioStore.filteredCareerData(); track $index){
             <div class="flex flex-row items-center">
                 <mat-icon class="flex-shrink-0">
                     @switch (item.type) {
@@ -50,7 +50,14 @@
                                 <mat-card-actions>
                                     <button mat-raised-button>
                                         <a [href]="item.link" target="_blank">
-                                            <span class="hidden sm:block">Job Responsibilities, Accomplishments, Projects</span>
+                                            @switch (item.type) {
+                                                @case ('Job') {
+                                                    <span class="hidden sm:block">Job Responsibilities, Accomplishments, Projects</span>
+                                                }
+                                                @case ('Student') {
+                                                    <span class="hidden sm:block">Knowledge & Skills Gained, Noteworthy Projects & Assignments</span>
+                                                }
+                                            }
                                             <span class="block sm:hidden">More Information</span>
                                         </a>
                                     </button>

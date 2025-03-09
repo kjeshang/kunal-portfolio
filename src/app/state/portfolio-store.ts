@@ -22,6 +22,7 @@ export type PortfolioState = {
     order: 'none' | 'asc' | 'desc';
     selectedSkills: string[],
     selectedTechnologies: string[]
+    // About Page Related
 }
 
 const initialPortfolioState: PortfolioState = {
@@ -34,6 +35,7 @@ const initialPortfolioState: PortfolioState = {
     order: 'none',
     selectedSkills: [],
     selectedTechnologies: []
+    // About Page Related
 }
 
 export const PortfolioStore = signalStore(
@@ -82,19 +84,25 @@ export const PortfolioStore = signalStore(
                     selectedTechnologies: technologyFilter
                 }))
             }
+            // About Page Related
         })
     ),
     withComputed((
         {
+            // Loading Related
             projectData,
+            careerData,
+            // Project Page Related
             query,
             order,
             selectedSkills,
             selectedTechnologies
+            // About Page Related
         },
         calcs = inject(PortfolioCalcsService),
         chartCalcs = inject(PortfolioChartService)
     ) => ({
+        // Project Page Related
         filteredProjectData: computed(() => {
             return calcs.getFilteredProjectData(
                 projectData(),
@@ -122,6 +130,12 @@ export const PortfolioStore = signalStore(
         technologyChart: computed(() => {
             return chartCalcs.getTechnologyPieChartData(
                 projectData()
+            );
+        }),
+        // About Page Related
+        filteredCareerData: computed(() => {
+            return calcs.getFilteredCareerData(
+                careerData()
             );
         })
     }))

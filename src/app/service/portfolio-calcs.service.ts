@@ -1,11 +1,14 @@
 import { Injectable } from "@angular/core";
-import { Project } from "../models/portfolio-models";
+import { Career, CareerView, Project } from "../models/portfolio-models";
 import { chain, uniqBy } from "lodash";
+import { DateTime } from "luxon";
 
 @Injectable({
     providedIn: 'root'
 })
 export class PortfolioCalcsService {
+
+    // Filter Options ---------------------------------------------------------------
 
     getUniqueSkills(
         projectData: Project[]
@@ -28,6 +31,8 @@ export class PortfolioCalcsService {
             .value();
         return uniqueTechnologies
     }
+
+    // Filtered Data -------------------------------------------------------------
     
     getFilteredProjectData(
         projectData: Project[],
@@ -57,6 +62,25 @@ export class PortfolioCalcsService {
                     data = chain(data).value();
                     break;
             }
+        return data;
+    }
+
+    getFilteredCareerData(
+        careerData: Career[]
+    ): CareerView[]{
+        let data: CareerView[] = chain(careerData)
+            .map(item => {
+                const parsedStartDate: number = DateTime.fromFormat(item.startDate, "MMM yyyy", { locale: "en" }).toMillis();
+                const parsedEndDate: number = item.endDate !== "Current" ? DateTime.fromFormat(item.endDate, "MMM yyyy", { locale: "en" }).toMillis() : Infinity;
+                const result: CareerView = {
+                    ...item,
+                    parsedStartDate,
+                    parsedEndDate
+                }
+                return result;
+            })
+            .orderBy(["parsedEndDate", "parsedStartDate"],["desc", "desc"])
+            .value();
         return data;
     }
 }
