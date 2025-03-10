@@ -23,6 +23,7 @@ export type PortfolioState = {
     selectedSkills: string[],
     selectedTechnologies: string[]
     // About Page Related
+    selectedType: string[];
 }
 
 const initialPortfolioState: PortfolioState = {
@@ -34,8 +35,9 @@ const initialPortfolioState: PortfolioState = {
     query: '',
     order: 'none',
     selectedSkills: [],
-    selectedTechnologies: []
+    selectedTechnologies: [],
     // About Page Related
+    selectedType:['Job','Student','Volunteer']
 }
 
 export const PortfolioStore = signalStore(
@@ -74,17 +76,22 @@ export const PortfolioStore = signalStore(
                     order: orderFilter
                 }))
             },
-            async updateSelectedSkills(skillFilter: string[]){
+            async updateSelectedSkillsFilter(skillFilter: string[]){
                 patchState(store, (state) => ({
                     selectedSkills: skillFilter
                 }))
             },
-            async updateSelectedTechnologies(technologyFilter: string[]){
+            async updateSelectedTechnologiesFilter(technologyFilter: string[]){
                 patchState(store, (state) => ({
                     selectedTechnologies: technologyFilter
                 }))
-            }
+            },
             // About Page Related
+            async updateSelectedTypeFilter(typeFilter: string[]){
+                patchState(store, (store) => ({
+                    selectedType: typeFilter
+                }))
+            }
         })
     ),
     withComputed((
@@ -96,8 +103,9 @@ export const PortfolioStore = signalStore(
             query,
             order,
             selectedSkills,
-            selectedTechnologies
+            selectedTechnologies,
             // About Page Related
+            selectedType
         },
         calcs = inject(PortfolioCalcsService),
         chartCalcs = inject(PortfolioChartService)
@@ -135,6 +143,12 @@ export const PortfolioStore = signalStore(
         // About Page Related
         filteredCareerData: computed(() => {
             return calcs.getFilteredCareerData(
+                careerData(),
+                selectedType()
+            );
+        }),
+        uniqueType: computed(() => {
+            return calcs.getUniqueType(
                 careerData()
             );
         })

@@ -77,9 +77,11 @@ export class PortfolioCalcsService {
     }
 
     getFilteredCareerData(
-        careerData: Career[]
+        careerData: Career[],
+        selectedType: string[]
     ): CareerView[]{
-        let data: CareerView[] = chain(careerData)
+        const data: CareerView[] = chain(careerData)
+            .filter(el => selectedType.includes(el.type))
             .map(item => {
                 const parsedStartDate: number = DateTime.fromFormat(item.startDate, "MMM yyyy", { locale: "en" }).toMillis();
                 const parsedEndDate: number = item.endDate !== "Current" ? DateTime.fromFormat(item.endDate, "MMM yyyy", { locale: "en" }).toMillis() : Infinity;

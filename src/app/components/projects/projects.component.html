@@ -20,7 +20,7 @@
                     <input 
                         matInput 
                         type="text" 
-                        formControlName="queryFormControl"
+                        formControlName="query"
                         (input)="onQueryInput()"
                         placeholder="Search Keyword"
                     >
@@ -32,7 +32,7 @@
                     <mat-label>Skills</mat-label>
                         <mat-select 
                             multiple="true"
-                            formControlName="skillsFormControl"
+                            formControlName="skills"
                             placeholder="Select Skills"
                             (selectionChange)="onSelectSkill($event)"
                         >
@@ -48,7 +48,7 @@
                         <mat-select 
                             multiple="true"
                             placeholder="Select Technologies"
-                            formControlName="technologieFormControl"
+                            formControlName="technologies"
                             (selectionChange)="onSelectTechnology($event)"
                         >
                             @for (item of portfolioStore.uniqueTechnologies(); track item) {
@@ -61,7 +61,7 @@
                     sm:flex sm:py-2 sm:justify-end sm:mt-0 sm:ml-auto"
                 >
                     <mat-button-toggle-group 
-                        formControlName="orderFormControl" 
+                        formControlName="order" 
                         (change)="onOrderButtonToggle($event)"
                         class="w-auto 
                             sm:mx-2"

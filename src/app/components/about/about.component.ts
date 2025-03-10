@@ -7,10 +7,19 @@ import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { TimelineComponent } from '../timeline/timeline.component';
+import { ExpertiseComponent } from '../expertise/expertise.component';
 
 @Component({
   selector: 'app-about',
-  imports: [CommonModule, MatExpansionModule, MatButtonModule, ContainerComponent, PlotlyBarChartComponent, PlotlyPieChartComponent, TimelineComponent],
+  imports: [
+    CommonModule, 
+    ContainerComponent, 
+    ExpertiseComponent,
+    TimelineComponent,
+    // Angular Material
+    MatExpansionModule, 
+    MatButtonModule, 
+  ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

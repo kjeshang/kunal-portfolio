@@ -22,13 +22,8 @@
                         <p class="font-light">This section is a graphical summary of my knowledge, skills and technological experience</p>
                     </mat-panel-description>
                 </mat-expansion-panel-header>
-                <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
-                    <div class="sm:p-2">
-                        <app-plotly-bar-chart [inputData]="portfolioStore.skillChart()"></app-plotly-bar-chart>
-                    </div>
-                    <div class="sm:p-2">
-                        <app-plotly-pie-chart [inputData]="portfolioStore.technologyChart()"></app-plotly-pie-chart>
-                    </div>
+                <div class="p-3">
+                    <app-expertise></app-expertise>
                 </div>
             </mat-expansion-panel>
             <mat-expansion-panel>

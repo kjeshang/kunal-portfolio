@@ -1,71 +1,97 @@
-<section class="min-h-screen flex w-full">
-    <div class="grid grid-cols-1 w-full">
-        @for(item of portfolioStore.filteredCareerData(); track $index){
-            <div class="flex flex-row items-center">
-                <mat-icon class="flex-shrink-0">
-                    @switch (item.type) {
-                        @case ('Job') {
-                            work
-                        }
-                        @case ('Volunteer') {
-                            volunteer_activism
-                        }
-                        @case ('Student') {
-                            school
-                        }
-                        @default {
-                            radio_button_unchecked
-                        }
-                    }
-                </mat-icon>
-                <mat-card class="mx-6 my-2 p-6 rounded-md shadow-md w-full">
-                    <mat-card-header>
-                        <mat-card-title-group class="flex flex-col gap-4">
-                            <div class="flex flex-wrap">
-                                <div mat-card-avatar class="mx-2">
-                                    <img mat-card-image [src]="item.logo" class="h-10 w-15" />
-                                </div>
-                                <div class="mx-2">
-                                    <p class="font-bold">{{ item.position }}</p>
-                                    <p>{{ item.company }}</p>
-                                </div>
-                            </div>
-                        </mat-card-title-group>
-                    </mat-card-header>
-                    <mat-card-subtitle class="px-6">
-                        <p class="font-light">{{ item.startDate }} - {{ item.endDate }}</p>
-                        <p class="font-light">{{ item.location }}</p>
-                    </mat-card-subtitle>
-                    <mat-card-content class="m-2">
-                        @if(item.description.length > 0){
-                            <ul>
-                                @for(desc of item.description; track $index){
-                                    <li class="mb-1">{{ desc }}</li>
-                                }
-                            </ul>
-                        }
-                    </mat-card-content>
-                        <mat-card-footer>
-                            @if(item.link !== ''){
-                                <mat-card-actions>
-                                    <button mat-raised-button>
-                                        <a [href]="item.link" target="_blank">
-                                            @switch (item.type) {
-                                                @case ('Job') {
-                                                    <span class="hidden sm:block">Job Responsibilities, Accomplishments, Projects</span>
-                                                }
-                                                @case ('Student') {
-                                                    <span class="hidden sm:block">Knowledge & Skills Gained, Projects & Assignments</span>
-                                                }
-                                            }
-                                            <span class="block sm:hidden">More Information</span>
-                                        </a>
-                                    </button>
-                                </mat-card-actions>
-                            }
-                        </mat-card-footer>
-                </mat-card>
-            </div>
-        }
+<div class="bg-gray-200 mb-3 rounded-md shadow-md" [formGroup]="timelineForm">
+    <div class="flex items-center justify-center">
+        <mat-chip-listbox 
+            multiple
+            class="p-2"
+            formControlName="type"
+            (change)="onTypeChipSelection($event)"
+        >
+            @for(item of portfolioStore.uniqueType(); track $index){
+                <mat-chip-option 
+                    class="!bg-white"
+                >
+                    {{ item }}
+                </mat-chip-option>
+            }
+        </mat-chip-listbox>
     </div>
+</div>
+<section class="min-h-screen flex w-full">
+    @if(portfolioStore.loading() == true){
+        <mat-spinner></mat-spinner>
+    }
+    @else if(portfolioStore.filteredCareerData().length == 0){
+        <p class="mx-auto text-lg font-medium">At least one of the above career type chips needs to be selected to see career timeline records</p>
+    }
+    @else {
+        <div class="grid grid-cols-1 w-full h-fit">
+            @for(item of portfolioStore.filteredCareerData(); track $index){
+                <div class="flex flex-row items-center">
+                    <mat-icon class="flex-shrink-0">
+                        @switch (item.type) {
+                            @case ('Job') {
+                                work
+                            }
+                            @case ('Volunteer') {
+                                volunteer_activism
+                            }
+                            @case ('Student') {
+                                school
+                            }
+                            @default {
+                                radio_button_unchecked
+                            }
+                        }
+                    </mat-icon>
+                    <mat-card class="mx-6 my-2 p-6 rounded-md shadow-md w-full">
+                        <mat-card-header>
+                            <mat-card-title-group class="flex flex-col gap-4">
+                                <div class="flex flex-wrap">
+                                    <div mat-card-avatar class="mx-2">
+                                        <img mat-card-image [src]="item.logo" class="h-10 w-15" />
+                                    </div>
+                                    <div class="mx-2">
+                                        <p class="font-bold">{{ item.position }}</p>
+                                        <p>{{ item.company }}</p>
+                                    </div>
+                                </div>
+                            </mat-card-title-group>
+                        </mat-card-header>
+                        <mat-card-subtitle class="px-6">
+                            <p class="font-light">{{ item.startDate }} - {{ item.endDate }}</p>
+                            <p class="font-light">{{ item.location }}</p>
+                        </mat-card-subtitle>
+                        <mat-card-content class="m-2">
+                            @if(item.description.length > 0){
+                                <ul>
+                                    @for(desc of item.description; track $index){
+                                        <li class="mb-1">{{ desc }}</li>
+                                    }
+                                </ul>
+                            }
+                        </mat-card-content>
+                            <mat-card-footer>
+                                @if(item.link !== ''){
+                                    <mat-card-actions>
+                                        <button mat-raised-button>
+                                            <a [href]="item.link" target="_blank">
+                                                @switch (item.type) {
+                                                    @case ('Job') {
+                                                        <span class="hidden sm:block">Job Responsibilities, Accomplishments, Projects</span>
+                                                    }
+                                                    @case ('Student') {
+                                                        <span class="hidden sm:block">Knowledge & Skills Gained, Projects & Assignments</span>
+                                                    }
+                                                }
+                                                <span class="block sm:hidden">More Information</span>
+                                            </a>
+                                        </button>
+                                    </mat-card-actions>
+                                }
+                            </mat-card-footer>
+                    </mat-card>
+                </div>
+            }
+        </div>
+    }
 </section>

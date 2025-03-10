@@ -1,0 +1,8 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
+    <div class="sm:p-2">
+        <app-plotly-bar-chart [inputData]="portfolioStore.skillChart()"></app-plotly-bar-chart>
+    </div>
+    <div class="sm:p-2">
+        <app-plotly-pie-chart [inputData]="portfolioStore.technologyChart()"></app-plotly-pie-chart>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ContainerComponent } from '../container/container.component';
 import { PortfolioStore } from '../../state/portfolio-store';
 import { CommonModule } from '@angular/common';
@@ -21,8 +21,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
     ContainerComponent, 
     CommonModule, 
     FormsModule,
+    ReactiveFormsModule,
     // Angular Material
-    ReactiveFormsModule, 
     MatCardModule, 
     MatButtonModule,
     MatFormFieldModule, 
@@ -45,34 +45,34 @@ export class ProjectsComponent {
   private formBuilder = inject(FormBuilder);
 
   projectForm = this.formBuilder.group({
-    queryFormControl: [''],
-    orderFormControl: [this.portfolioStore.order()],
-    skillsFormControl: [this.portfolioStore.selectedSkills()],
-    technologieFormControl: [this.portfolioStore.selectedTechnologies()]
+    query: [''],
+    order: [this.portfolioStore.order()],
+    skills: [this.portfolioStore.selectedSkills()],
+    technologies: [this.portfolioStore.selectedTechnologies()]
   });
 
   onQueryInput(): void {
-    const query: string = this.projectForm.get("queryFormControl")?.value as string;
+    const query: string = this.projectForm.get("query")?.value as string;
     this.portfolioStore.updateQueryFilter(query);
     console.log(this.portfolioStore.query());
   }
 
   onOrderButtonToggle(e: MatButtonToggleChange): void {
-    const order: 'none' | 'asc' | 'desc' = this.projectForm.get("orderFormControl")?.value as 'none' | 'asc' | 'desc';
+    const order: 'none' | 'asc' | 'desc' = this.projectForm.get("order")?.value as 'none' | 'asc' | 'desc';
     console.log("Order:",e.value);
     this.portfolioStore.updateOrderFilter(order); 
   }
 
   onSelectSkill(e: MatSelectChange): void {
-    const selectedSkills: string[] = this.projectForm.get("skillsFormControl")?.value as string[];
+    const selectedSkills: string[] = this.projectForm.get("skills")?.value as string[];
     console.log("Selected Skills:",e.value);
-    this.portfolioStore.updateSelectedSkills(selectedSkills);
+    this.portfolioStore.updateSelectedSkillsFilter(selectedSkills);
   }
 
   onSelectTechnology(e: MatSelectChange): void {
-    const selectedTechnologies: string[] = this.projectForm.get("technologieFormControl")?.value as string[];
+    const selectedTechnologies: string[] = this.projectForm.get("technologies")?.value as string[];
     console.log("Selected Technology:",e.value);
-    this.portfolioStore.updateSelectedTechnologies(selectedTechnologies);
+    this.portfolioStore.updateSelectedTechnologiesFilter(selectedTechnologies);
   }
 
   onClickSkillButton(skill: string): void {
@@ -85,8 +85,8 @@ export class ProjectsComponent {
       selectedSkills.push(skill);
       this.openSnackBar(`Added ${skill}`)
     }
-    this.projectForm.get("skillsFormControl")?.setValue(selectedSkills);
-    this.portfolioStore.updateSelectedSkills(selectedSkills);
+    this.projectForm.get("skills")?.setValue(selectedSkills);
+    this.portfolioStore.updateSelectedSkillsFilter(selectedSkills);
   }
 
   onClickTechnologyMatChip(technology: string): void {
@@ -99,8 +99,8 @@ export class ProjectsComponent {
       selectedTechnologies.push(technology);
       this.openSnackBar(`Added ${technology}`)
     }
-    this.projectForm.get("technologieFormControl")?.setValue(selectedTechnologies);
-    this.portfolioStore.updateSelectedTechnologies(selectedTechnologies);
+    this.projectForm.get("technologies")?.setValue(selectedTechnologies);
+    this.portfolioStore.updateSelectedTechnologiesFilter(selectedTechnologies);
   }
 
   openSnackBar(message: string): void {
