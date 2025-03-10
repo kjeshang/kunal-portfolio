@@ -13,6 +13,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "plotly.js-dist-min"
+            ],
             "outputPath": "dist/kunal-portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
