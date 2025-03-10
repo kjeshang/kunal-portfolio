@@ -16,7 +16,8 @@ export type PortfolioState = {
     // Loading Related
     projectData: Project[];
     careerData: Career[];
-    loading: boolean;
+    loadingProjectData: boolean;
+    loadingCareerData: boolean;
     // Project Page Related
     query: string;
     order: 'none' | 'asc' | 'desc';
@@ -30,7 +31,8 @@ const initialPortfolioState: PortfolioState = {
     // Loading Related
     projectData: [],
     careerData: [],
-    loading: false,
+    loadingProjectData: false,
+    loadingCareerData: false,
     // Project Page Related
     query: '',
     order: 'none',
@@ -50,19 +52,19 @@ export const PortfolioStore = signalStore(
         ) => ({
             // Loading Related
             async loadProjectData(){
-                patchState(store, {loading: true})
+                patchState(store, {loadingProjectData: true})
                 const projectData: Project[] = await db.getDataForProjects();
                 patchState(store, (state) => ({
                     projectData: projectData, 
-                    loading: false, 
+                    loadingProjectData: false, 
                 }));
             },
             async loadCareerData(){
-                patchState(store, {loading: true})
+                patchState(store, {loadingCareerData: true})
                 const careerData: Career[] = await db.getDataForCareer();
                 patchState(store, (state) => ({
                     careerData: careerData, 
-                    loading: false, 
+                    loadingCareerData: false, 
                 }));
             },
             // Project Page Related

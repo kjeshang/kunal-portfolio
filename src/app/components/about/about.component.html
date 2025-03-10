@@ -1,5 +1,5 @@
 <app-container>
-    @if(portfolioStore.loading() == true){
+    @if(portfolioStore.loadingProjectData() == true || portfolioStore.loadingCareerData() == true){
         <div class="flex items-center justify-center my-40">
             <mat-spinner></mat-spinner>
         </div>

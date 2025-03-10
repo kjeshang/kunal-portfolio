@@ -17,10 +17,7 @@
     </div>
 </div>
 <section class="min-h-screen flex w-full">
-    @if(portfolioStore.loading() == true){
-        <mat-spinner></mat-spinner>
-    }
-    @else if(portfolioStore.filteredCareerData().length == 0){
+    @if(portfolioStore.filteredCareerData().length == 0){
         <p class="mx-auto text-lg font-medium">At least one of the above career type chips needs to be selected to see career timeline records</p>
     }
     @else {

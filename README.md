@@ -1,5 +1,7 @@
 # KunalPortfolio
 
+[Live Version](https://kunal-jeshang-portfolio.netlify.app/)
+
 ## Project Structure
 
 * Header Component (containing Nav bar)
