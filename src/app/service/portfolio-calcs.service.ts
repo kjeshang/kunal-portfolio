@@ -32,6 +32,17 @@ export class PortfolioCalcsService {
         return uniqueTechnologies
     }
 
+    getUniqueType(
+        careerData: Career[]
+    ): string[]{
+        const uniqueType: string[] = chain(careerData)
+            .map(item => item.type)
+            .uniq()
+            .sort()
+            .value();
+        return uniqueType;
+    }
+
     // Filtered Data -------------------------------------------------------------
     
     getFilteredProjectData(

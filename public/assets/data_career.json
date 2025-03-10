@@ -204,5 +204,17 @@
         "skills":[],
         "link":"https://kunaljeshang.wordpress.com/professional-stuff/",
         "logo":"assets/Student_TempleUniversity.png"
+    },
+    {
+        "type":"Volunteer",
+        "position":"Emotional Support Chat Responder",
+        "company":"Certified Listeners Society",
+        "location":"Burlington, Ontario, Canada",
+        "startDate":"Jun 2021",
+        "endDate":"Sep 2021",
+        "description":[],
+        "skills":[],
+        "link":"",
+        "logo":"assets/Volunteer_CertifiedListenersSociety.jpeg"
     }
 ]
