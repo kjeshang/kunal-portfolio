@@ -25,8 +25,12 @@ export class PlotlyPieChartComponent implements OnChanges {
     ],
     layout: {
       title:{text:''},
+      autosize: true,
     },
-    config:{displayModeBar: false}
+    config:{
+      displayModeBar: false,
+      responsive: true
+    },
   }
   
   ngOnChanges(changes: SimpleChanges): void {

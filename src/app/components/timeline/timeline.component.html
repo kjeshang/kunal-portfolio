@@ -46,8 +46,8 @@
                     <mat-card class="mx-6 my-2 p-6 rounded-md shadow-md w-full">
                         <mat-card-header>
                             <mat-card-title-group class="flex flex-col gap-4">
-                                <div class="flex flex-wrap">
-                                    <div mat-card-avatar class="mx-2">
+                                <div class="flex sm:flex-wrap flex-col">
+                                    <div mat-card-avatar class="mx-auto sm:mx-2">
                                         <img mat-card-image [src]="item.logo" class="h-10 w-15" />
                                     </div>
                                     <div class="mx-2">
@@ -62,13 +62,15 @@
                             <p class="font-light">{{ item.location }}</p>
                         </mat-card-subtitle>
                         <mat-card-content class="m-2">
-                            @if(item.description.length > 0){
-                                <ul>
-                                    @for(desc of item.description; track $index){
-                                        <li class="mb-1">{{ desc }}</li>
-                                    }
-                                </ul>
-                            }
+                            <div class="hidden sm:block">
+                                @if(item.description.length > 0){
+                                    <ul>
+                                        @for(desc of item.description; track $index){
+                                            <li class="mb-1">{{ desc }}</li>
+                                        }
+                                    </ul>
+                                }
+                            </div>
                         </mat-card-content>
                             <mat-card-footer>
                                 @if(item.link !== ''){

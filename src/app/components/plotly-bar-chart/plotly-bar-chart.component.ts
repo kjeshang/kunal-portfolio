@@ -25,10 +25,19 @@ export class PlotlyBarChartComponent implements OnChanges {
     height:0,
     layout: {
       title:{text:''},
-      xaxis:{visible:true},
-      yaxis:{visible:true}
+      xaxis:{
+        visible:true, 
+        tickfont:{
+          size:10
+        }
+      },
+      yaxis:{visible:true},
+      autosize: true,
     },
-    config:{displayModeBar: false}
+    config:{
+      displayModeBar: false, 
+      responsive: true
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {

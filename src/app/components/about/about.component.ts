@@ -1,13 +1,12 @@
-import { Component, inject, OnInit, viewChild } from '@angular/core';
+import { Component, inject, viewChild } from '@angular/core';
 import { ContainerComponent } from "../container/container.component";
-import { PlotlyBarChartComponent } from '../plotly-bar-chart/plotly-bar-chart.component';
 import { PortfolioStore } from '../../state/portfolio-store';
-import { PlotlyPieChartComponent } from '../plotly-pie-chart/plotly-pie-chart.component';
 import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { TimelineComponent } from '../timeline/timeline.component';
 import { ExpertiseComponent } from '../expertise/expertise.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-about',
@@ -19,6 +18,7 @@ import { ExpertiseComponent } from '../expertise/expertise.component';
     // Angular Material
     MatExpansionModule, 
     MatButtonModule, 
+    MatProgressSpinnerModule
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
