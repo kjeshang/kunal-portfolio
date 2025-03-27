@@ -1,5 +1,13 @@
 [
     {
+        "title":"Porfolio Web Application",
+        "description":"This is the current version of my portfolio website (i.e., the website you see before you). It is a multi-component single page application created with the help of the Angular framework, and packages such as SignalStore, Lodash, Plotly, and Luxon.",
+        "link":"https://github.com/kjeshang/kunal-portfolio",
+        "image":"assets/Logo_2.png",
+        "skill":"Frontend Development",
+        "technology":"Angular"
+    },
+    {
         "title":"My French Learning Blog",
         "description":"A web application that acts as a frontend to track my french language learning journey. The frontend retrieves the actual blog posts from a separate GitHub Repository that serves as a static-external backend, and then displays it.",
         "link":"https://github.com/kjeshang/my-french-learning-blog",
@@ -62,6 +70,14 @@
         "image":"assets/Project_Nespresso.jpeg",
         "skill":"Data Analysis",
         "technology":"Python"
+    },
+    {
+        "title":"Legacy Portfolio Website",
+        "description":"An early version of the current website that utilizes basic web development fundamentals.",
+        "link":"https://github.com/kjeshang/kjeshang.github.io",
+        "image":"assets/Logo_2.png",
+        "skill":"Web Development",
+        "technology":"HTML, CSS, Javascript"
     },
     {
         "title":"Nespresso Metropolis Training App",

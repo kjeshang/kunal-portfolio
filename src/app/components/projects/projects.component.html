@@ -98,7 +98,9 @@
                         </mat-card-subtitle>
                         <mat-card-content>
                             <p class="tracking-wide">{{ item.description }}</p>
-                            <div class="flex items-center justify-center mt-3 space-x-2">
+                        </mat-card-content>
+                        <mat-card-footer>
+                            <div class="flex items-end justify-center py-2 space-x-2">
                                 <mat-chip
                                     (click)="onClickTechnologyMatChip(item.technology)"
                                 >
@@ -108,7 +110,7 @@
                                     <a [href]="item.link" target="_blank">View Here</a>
                                 </button>
                             </div>
-                        </mat-card-content>
+                        </mat-card-footer>
                     </mat-card>
                 </div>
             }
