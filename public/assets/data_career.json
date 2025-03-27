@@ -31,6 +31,9 @@
         "endDate":"Sep 2023",
         "location":"Burnaby, British Columbia, Canada",
         "description":[
+            "● Demonstrated optimal customer service by engaging in concise & strong communications with over 30 customers consequently per day when assisting with transactions and advising about Nespresso products & services.",
+            "● Exceeded key performance targets in terms of average basket value and club member retention for all quarters of 2022 by providing exceptional customer service and answering customer inquiries with enthusiasm and attention to detail.",
+            "● Coached over 15 new Coffee Specialists in professional communication, product lineup, in-store policies, and operating Nespresso software, as well as provided ad-hoc support during customer transactions.",
             "● Built a content-based coffee flavor recommendation engine in the guise of a proof-of-concept web-based training platform, using Python and the Pandas, Numpy, NLTK, Scikit Learn, Matplotlib, Seaborn, WordCloud, Plotly, and Dash packages, and received positive reviews from management regarding its accuracy and applicability to training new hires.",
             "● Conducted an in-depth analysis of historical Google reviews, between 2019 to 2022, to assist management in better understanding customer perception of service quality & business operations, as well as retrieve constructive feedback to pinpoint areas for improvement."
         ],
@@ -60,6 +63,7 @@
         "endDate":"Sep 2023",
         "location":"Burnaby, British Columbia, Canada",
         "description":[
+            "● Demonstrated expert knowledge of technology products, services, and trends, resulting in increased customer confidence, repeat business, and positive word-of-mouth referrals.",
             "● Developed an Android mobile application, using Java with an SQLite database, to assist associates in better understanding product lineup, and to serve as a referential tool to help connect, share, and partner with customers to meet their requirements."
         ],
         "skills":[],
@@ -75,7 +79,8 @@
         "location":"Calmar, Alberta, Canada - Remote",
         "description":[
             "● Improved data availability & integrity by programmatically extracting previously unavailable unaggregated Facebook & Instagram data to both CSV and Google Sheets files on a weekly basis, using Python and the Pandas, Datetime, Requests, Gspread packages, along with the Facebook Graph API and Google Sheets API.",
-            "● Decreased overall expenditure of the organization by developing a free & accessible custom web-based dashboard tool designed to visualize social media data to derive insights, which is deployed online via Heroku, using Python and the Pandas, Numpy, Datetime, Plotly, Dash, Flask, and Gunicorn packages."
+            "● Decreased overall expenditure of the organization by developing a free & accessible custom web-based dashboard tool designed to visualize social media data to derive insights, which is deployed online via Heroku, using Python and the Pandas, Numpy, Datetime, Plotly, Dash, Flask, and Gunicorn packages.",
+            "● Scraped volunteer applicant data from the Volunteer Connector portal on an ad-hoc basis to help gauge volunteer posting interest and application status, using Python and the Pandas and Selenium packages, in turn, reduced several hours of manual work to approximately 15 minutes."
         ],
         "skills":[],
         "link":"https://kunaljeshang.wordpress.com/zyp-art-gallery/",
@@ -89,9 +94,14 @@
         "endDate":"Apr 2022",
         "location":"New Westminster, British Columbia, Canada",
         "description":[
+            "● Solved educational hardware & software issues for approximately 10 to 25 students on a daily basis via in-person instruction, email, phone call, text message, and Zoom/Microsoft Teams video conference meetings.",
             "● Alleviated 80% of manual workload by automating monthly Excel reporting regarding student technology queries, using Python and the Pandas, Numpy, and Scipy packages, to reallocate focus on creating Visme/PowerBI reports.",
             "● Streamlined cross-team coordination of the CEIT Department to maintain college-wide technology infrastructure by constructing an employee status system that is hosted on Confluence, using HTML, PHP, CSS, Bootstrap, JavaScript, jQuery, Ajax, and a MySQL database.",
-            "● Developed an executable prototype mentor-mentee matching algorithm for Douglas College International’s mentorship program to ensure the successful transition of new International students to Canadian life and post-secondary education, using Python and the Pandas, Scikit Learn, NLTK, and Pyinstaller packages."
+            "● Reduced student wait times in receiving technical assistance for common technology issues by training a chatbot to provide instantaneous support that is hosted on Microsoft Teams, using Microsoft Power Virtual Agents, Microsoft Visio, and Draw.io.",
+            "● Developed an executable prototype mentor-mentee matching algorithm for Douglas College International’s mentorship program to ensure the successful transition of new International students to Canadian life and post-secondary education, using Python and the Pandas, Scikit Learn, NLTK, and Pyinstaller packages.",
+            "● Worked with Microsoft Power Automate & SharePoint Lists to help Douglas College International manage semester-to-semester rollover for the mentorship program in terms of a user and data management perspective.",
+            "● Created a prototype project management system, using Microsoft PowerApps with a SharePoint List backend, for the CEIT department to help manage its tasks in accordance with prior-committed tasks & important school deadlines, as well as assist solve scheduling conflicts.",
+            "● Created a prototype Douglas College service status page solution, using Microsoft PowerApps with a SharePoint List backend, which is embedded on the Service Desk SharePoint page to notify faculty & staff of any service outages & maintenance updates."
         ],
         "skills":[],
         "link":"https://kunaljeshang.wordpress.com/ceit-douglas-college-co-op/",
@@ -105,7 +115,9 @@
         "endDate":"Dec 2019",
         "location":"Burnaby, British Columbia, Canada",
         "description":[
-            "● Assisted students with calculations, concepts, and R-programming queries, for several introductory-core statistics courses on an ad-hoc basis at the statistics workshop, and as result, regularly received a positive response for my detailed explanations and encouraging nature"
+            "● Assisted students with calculations, concepts, and R-programming queries, for several introductory-core statistics courses on an ad-hoc basis at the statistics workshop, and as result, regularly received a positive response for my detailed explanations and encouraging nature.",
+            "● Performed marking duties accurately with attention to timeliness and accuracy, while also providing constructive feedback",
+            "● Created homework assignment marking records, which included the total duration of the marking session, along with explanations on common mistakes made by students in the respective course and any other observations; appreciated by statistics workshop coordinator for detailed and explanatory marking records."
         ],
         "skills":[],
         "link":"",
@@ -119,7 +131,10 @@
         "endDate":"Jun 2019",
         "location":"Dar-es-Salaam, Tanzania",
         "description":[
-            "● Slashed completion time of deliverables that require long-tedious work & complex analyses from several workdays to a few minutes by implementing automated business solutions in the form of macro-enabled spreadsheets using Excel VBA."
+            "● Assisted the finance team across the full lifecycle of financial transactions by processing premium payment transactions & tax invoices daily, regularly updating journal entry records & tax filings, performing monthly bank reconciliations to maintain financial integrity, tracking and reporting aging debtors against the trial balance.",
+            "● Slashed completion time of deliverables that require long-tedious work & complex analyses from several workdays to a few minutes by implementing automated business solutions in the form of macro-enabled spreadsheets using Excel VBA.",
+            "● Constructed supporting documentation for the aforementioned business solutions using PowerPoint, and provided ad-hoc technical assistance/informal training on how to operate the business solutions as well as any other business tasks that required heavy use of technology.",
+            "● Attained salary increment within two weeks of hire for efficient execution of administrative & general office duties, and awarded performance appraisal upon completion of the internship for workflow-enhancing contributions to the department."
         ],
         "skills":[],
         "link":"https://kunaljeshang.wordpress.com/finance-internship-at-phoenix-assurance-of-tanzania/?_gl=1*19k09y8*_gcl_au*MjEwOTY4NTkyOS4xNzQxNTUzMjI0",
@@ -132,7 +147,11 @@
         "startDate":"Nov 2018",
         "endDate":"Mar 2019",
         "location":"Dar-es-Salaam, Tanzania",
-        "description":[],
+        "description":[
+            "● Attended 30-35 customers daily with the help of the manager and met customer needs in a timely manner.",
+            "● Coordinated the installation of certain car accessories with in-house technicians to ensure optimal customer satisfaction.",
+            "● Negotiated with suppliers to obtain car accessories (e.g. seat covers, spotlights, car alarms, window films, etc.) for resale."
+        ],
         "skills":[],
         "link":"",
         "logo":"assets/Job_IndoAfricanAutoParts.png"
@@ -144,7 +163,11 @@
         "startDate":"Aug 2016",
         "endDate":"Dec 2016",
         "location":"Philadelphia, Pennsylvania, USA",
-        "description":[],
+        "description":[
+            "● Contacted alumni, that graduated between 1970 and 2005, via telephone, email, and social media to schedule and conduct in-person informational interviews for the purpose of reigniting and strengthening university alumni relations.",
+            "● Updated background information, contact details, and other relevant information through in-person/virtual interaction with alumni and supplementary research, of at least 80 alumni over four months, in tracking document to help maintain the integrity of the university’s alumni records.",
+            "● Received a performance bonus for most informational interviews conducted and most alumni records updated."
+        ],
         "skills":[],
         "link":"",
         "logo":"assets/Job_TempleUniversity.png"
@@ -156,7 +179,11 @@
         "startDate":"Mar 2016",
         "endDate":"Jun 2016",
         "location":"Dar-es-Salaam, Tanzania",
-        "description":[],
+        "description":[
+            "● Served as an intermediary between the organization’s underwriters and the underwriters of insurance carriers, and maintained clear in-person & written communication regarding the policies of insured clients.",
+            "● Prepared concise & informative all-asset protector policies that aligned with the client requirements, risk surveyor analysis, and the East African insurance standards, with consistent approval from the general manager.",
+            "● Completed value-added-tax calculations and supplementary document preparation for over 30 vehicles, insured by a motor-vehicle policy, daily with 100% accuracy and in a timely manner."
+        ],
         "skills":[],
         "link":"",
         "logo":"assets/Job_MICGlobalRisks.png"
@@ -168,7 +195,12 @@
         "startDate":"Jun 2015",
         "endDate":"Jul 2015",
         "location":"Dar-es-Salaam, Tanzania",
-        "description":[],
+        "description":[
+            "● Demonstrated excellent customer service when interacting with brokers and direct clients upon intimation & payment of a motor vehicle claim, and successfully maintained a reasonable level of scrutiny when validating the insured’s details and circumstances of the loss incurred.",
+            "● Registered approximately 25-50 non-life claims daily in claims register, as well as department-shared spreadsheet chronologically by intimation date and descending order by claims number, with attention to speed and accuracy.",
+            "● Constructed repair authorities and partial/total loss discharge vouchers for motor-vehicle claims on a regular basis, in adherence to the in-house loss adjuster’s expectations, with 100% calculation accuracy.",
+            "● Improved operations flow of the claims department by 30% and received appreciation from claims officers for efficient execution, by consistently meeting time-sensitive deadlines for claims-related administrative tasks, regularly engaging in non-technological forms of data entry (i.e., printing, photocopying & filing), and providing any other forms of assistance to the claims officers on an ad-hoc basis."
+        ],
         "skills":[],
         "link":"",
         "logo":"assets/Job_AllianceInsuranceCorporation.jpeg"
@@ -212,9 +244,11 @@
         "location":"Burlington, Ontario, Canada",
         "startDate":"Jun 2021",
         "endDate":"Sep 2021",
-        "description":[],
+        "description":[
+            "● Supported individuals in need of early-stage & real-time intervention, as well as guidance on how to make better mental health lifestyle choices, in the form of emotional support chats on an online platform."
+        ],
         "skills":[],
-        "link":"",
+        "link":"https://www.dropbox.com/scl/fo/itrf4tv891bkntnndzsos/AIenBwx0DOyhr0Q95EvoK4s?rlkey=qxcikcytqtqwwjogpv2z58e8i&st=4ht7cdqw&dl=0",
         "logo":"assets/Volunteer_CertifiedListenersSociety.jpeg"
     }
 ]
