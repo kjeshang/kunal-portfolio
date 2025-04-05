@@ -1,6 +1,6 @@
 # KunalPortfolio
 
-[Live Version](https://kunal-jeshang-portfolio.netlify.app/)
+[Live Version](https://kjeshang.netlify.app//)
 
 ## Project Structure
 
