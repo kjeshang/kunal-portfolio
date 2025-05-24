@@ -4,10 +4,11 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactComponent } from '../contact/contact.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [MatButtonModule, MatMenuModule, MatIconModule],
+  imports: [MatButtonModule, MatMenuModule, MatIconModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
