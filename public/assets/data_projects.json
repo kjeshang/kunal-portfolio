@@ -1,7 +1,7 @@
 [
     {
         "title":"French Learning Blog Web Application",
-        "description":"This is an updated version of my french learning blog. The application retrieves the actual blog posts from a separate GitHub Repository that serves as a static-external backend. This project was created with the help of the Angular framework, and packages such as Angular Material, SignalStore, Lodash, Plotly, Luxon, and Ngx-Markdown.",
+        "description":"This is an updated version of my french learning blog. The application retrieves the actual blog posts from a separate GitHub Repository that serves as a static-external backend. This project was created with the help of the Angular framework, and packages such as SignalStore, Lodash, Plotly, Luxon, and Ngx-Markdown.",
         "link":"https://github.com/kjeshang/my-french-learning-blog-updated",
         "image":"assets/Project_MyFrenchLearning.jpg",
         "skill":"Frontend Development",
