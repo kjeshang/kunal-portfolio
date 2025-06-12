@@ -16,7 +16,7 @@
         "technology":"Angular"
     },
     {
-        "title":"Legacy French Learning Blog",
+        "title":"Legacy French Learning Blog Website",
         "description":"A web application that acts as a frontend to track my french language learning journey. The frontend retrieves the actual blog posts from a separate GitHub Repository that serves as a static-external backend, and then displays it.",
         "link":"https://github.com/kjeshang/my-french-learning-blog",
         "image":"assets/Project_MyFrenchLearning.jpg",
