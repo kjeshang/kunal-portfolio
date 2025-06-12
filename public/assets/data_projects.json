@@ -1,14 +1,22 @@
 [
     {
+        "title":"French Learning Blog Web Application",
+        "description":"This is an updated version of my french learning blog. The application retrieves the actual blog posts from a separate GitHub Repository that serves as a static-external backend. This project was created with the help of the Angular framework, and packages such as Angular Material, SignalStore, Lodash, Plotly, Luxon, and Ngx-Markdown.",
+        "link":"https://github.com/kjeshang/my-french-learning-blog-updated",
+        "image":"assets/Project_MyFrenchLearning.jpg",
+        "skill":"Frontend Development",
+        "technology":"Angular"
+    },
+    {
         "title":"Porfolio Web Application",
-        "description":"This is the current version of my portfolio website (i.e., the website you see before you). It is a multi-component single page application created with the help of the Angular framework, and packages such as SignalStore, Lodash, Plotly, and Luxon.",
+        "description":"This is the current version of my portfolio website (i.e., the website you see before you). It is a multi-component single page application created with the help of the Angular framework, and packages such as Angular Material, SignalStore, Lodash, Plotly, and Luxon.",
         "link":"https://github.com/kjeshang/kunal-portfolio",
         "image":"assets/Logo_2.png",
         "skill":"Frontend Development",
         "technology":"Angular"
     },
     {
-        "title":"My French Learning Blog",
+        "title":"Legacy French Learning Blog",
         "description":"A web application that acts as a frontend to track my french language learning journey. The frontend retrieves the actual blog posts from a separate GitHub Repository that serves as a static-external backend, and then displays it.",
         "link":"https://github.com/kjeshang/my-french-learning-blog",
         "image":"assets/Project_MyFrenchLearning.jpg",
