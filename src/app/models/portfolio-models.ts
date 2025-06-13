@@ -31,6 +31,7 @@ export interface Career {
     skills: string[]; // Soft skills
     link: string; // External link containing detailed account of achievements & responsabilities,
     logo: string; // Company/Educational Institution logo
+    fulltime: boolean; // Job/Student/Volunteer Experience was full-time or part-time
 }
 
 export interface CareerView extends Career {
