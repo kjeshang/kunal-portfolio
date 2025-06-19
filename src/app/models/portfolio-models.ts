@@ -32,6 +32,7 @@ export interface Career {
     link: string; // External link containing detailed account of achievements & responsabilities,
     logo: string; // Company/Educational Institution logo
     fulltime: boolean; // Job/Student/Volunteer Experience was full-time or part-time
+    technical: boolean; // Experience was technical or not technical
 }
 
 export interface CareerView extends Career {

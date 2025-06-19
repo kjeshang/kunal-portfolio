@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { TimelineComponent } from '../timeline/timeline.component';
 import { ExpertiseComponent } from '../expertise/expertise.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { sum, sumBy } from 'lodash';
+import { chain, sum, sumBy } from 'lodash';
 import { CareerView } from '../../models/portfolio-models';
 
 @Component({
@@ -33,5 +33,15 @@ export class AboutComponent {
     let totalYearsOfExperience: number = sumBy(this.portfolioStore.filteredCareerData().filter((item: CareerView) => item.type === 'Job'), "yearsOfExperience");
     totalYearsOfExperience = Math.floor(totalYearsOfExperience);
     return totalYearsOfExperience;
+  }
+
+  getTotalYearsOfTechnicalExperience(): number {
+    let totalYearsOfTechnicalExperience = chain(this.portfolioStore.filteredCareerData())
+      .filter((item: CareerView) => item.type === 'Job')
+      .filter((item: CareerView) => item.technical === true)
+      .sumBy('yearsOfExperience')
+      .value();
+    totalYearsOfTechnicalExperience = Math.round(totalYearsOfTechnicalExperience);
+    return totalYearsOfTechnicalExperience;
   }
 }
