@@ -22,7 +22,8 @@
     }
     @else {
         <div class="grid grid-cols-1 w-full h-fit">
-            @for(item of portfolioStore.filteredCareerData(); track $index){
+            <cdk-virtual-scroll-viewport itemSize="16" class="my-virtual-scroll-viewport">
+                @for(item of portfolioStore.filteredCareerData(); track $index){
                 <div class="flex flex-row items-center">
                     <mat-icon class="flex-shrink-0">
                         @switch (item.type) {
@@ -94,6 +95,7 @@
                     </mat-card>
                 </div>
             }
+            </cdk-virtual-scroll-viewport>
         </div>
     }
 </section>
