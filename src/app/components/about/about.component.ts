@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { TimelineComponent } from '../timeline/timeline.component';
 import { ExpertiseComponent } from '../expertise/expertise.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { sum, sumBy } from 'lodash';
+import { CareerView } from '../../models/portfolio-models';
 
 @Component({
   selector: 'app-about',
@@ -26,4 +28,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 export class AboutComponent {
   portfolioStore = inject(PortfolioStore);
   accordion = viewChild.required(MatAccordion);
+
+  getTotalYearsOfExperience(): number {
+    let totalYearsOfExperience: number = sumBy(this.portfolioStore.filteredCareerData().filter((item: CareerView) => item.type === 'Job'), "yearsOfExperience");
+    totalYearsOfExperience = Math.floor(totalYearsOfExperience);
+    return totalYearsOfExperience;
+  }
 }

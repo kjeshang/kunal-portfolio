@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Career, CareerView, Project } from "../models/portfolio-models";
 import { chain, uniqBy } from "lodash";
-import { DateTime } from "luxon";
+import { DateTime, Duration } from "luxon";
 
 @Injectable({
     providedIn: 'root'
@@ -85,10 +85,23 @@ export class PortfolioCalcsService {
             .map(item => {
                 const parsedStartDate: number = DateTime.fromFormat(item.startDate, "MMM yyyy", { locale: "en" }).toMillis();
                 const parsedEndDate: number = item.endDate !== "Current" ? DateTime.fromFormat(item.endDate, "MMM yyyy", { locale: "en" }).toMillis() : Infinity;
+                
+                let yearsOfExperience: number = 0;
+                if(item.endDate === 'Current'){
+                    yearsOfExperience = Duration.fromMillis(DateTime.now().toMillis() - parsedStartDate).as('years');
+                }
+                else {
+                    yearsOfExperience = Duration.fromMillis(parsedEndDate - parsedStartDate).as('years');
+                }
+
+                if(!item.fulltime){
+                    yearsOfExperience = yearsOfExperience / 2;
+                }
                 const result: CareerView = {
                     ...item,
                     parsedStartDate,
-                    parsedEndDate
+                    parsedEndDate,
+                    yearsOfExperience
                 }
                 return result;
             })

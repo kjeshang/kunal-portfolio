@@ -37,4 +37,5 @@ export interface Career {
 export interface CareerView extends Career {
     parsedStartDate: number;
     parsedEndDate: number;
+    yearsOfExperience: number;
 }
