@@ -11,7 +11,8 @@
         "link":"",
         "logo":"assets/Job_AmaisTechnologies.png",
         "fulltime":true,
-        "technical":true
+        "technical":true,
+        "domain":"Information Technology"
     },
     {
         "type":"Job",
@@ -25,7 +26,8 @@
         "link":"https://kunaljeshang.wordpress.com/nestle-nespresso-s-a/team-leader/",
         "logo":"assets/Job_Nespresso.jpeg",
         "fulltime":true,
-        "technical":false
+        "technical":false,
+        "domain":"Retail"
     },
     {
         "type":"Job",
@@ -45,7 +47,8 @@
         "link":"https://kunaljeshang.wordpress.com/nestle-nespresso-s-a/coffee-specialist/",
         "logo":"assets/Job_Nespresso.jpeg",
         "fulltime":true,
-        "technical":false
+        "technical":false,
+        "domain":"Retail"
     },
     {
         "type":"Job",
@@ -61,7 +64,8 @@
         "link":"",
         "logo":"assets/Job_TelusInternationalAIDataSolutions.jpeg",
         "fulltime":false,
-        "technical":false
+        "technical":false,
+        "domain":"Telecommunications"
     },
     {
         "type":"Job",
@@ -78,7 +82,8 @@
         "link":"",
         "logo":"assets/Job_StaplesCanada.png",
         "fulltime":false,
-        "technical":false
+        "technical":false,
+        "domain":"Retail"
     },
     {
         "type":"Job",
@@ -96,7 +101,8 @@
         "link":"https://kunaljeshang.wordpress.com/zyp-art-gallery/",
         "logo":"assets/Job_ZypArtGallery.jpeg",
         "fulltime":false,
-        "technical":true
+        "technical":true,
+        "domain":"Non-Profit"
     },
     {
         "type":"Job",
@@ -119,7 +125,8 @@
         "link":"https://kunaljeshang.wordpress.com/ceit-douglas-college-co-op/",
         "logo":"assets/Job_CEITDouglasCollege.jpeg",
         "fulltime":true,
-        "technical":true
+        "technical":true,
+        "domain":"Information Technology"
     },
     {
         "type":"Job",
@@ -137,7 +144,8 @@
         "link":"",
         "logo":"assets/Job_SimonFraserUniversity.png",
         "fulltime":false,
-        "technical":false
+        "technical":false,
+        "domain":"Education"
     },
     {
         "type":"Job",
@@ -156,7 +164,8 @@
         "link":"https://kunaljeshang.wordpress.com/finance-internship-at-phoenix-assurance-of-tanzania/?_gl=1*19k09y8*_gcl_au*MjEwOTY4NTkyOS4xNzQxNTUzMjI0",
         "logo":"assets/Job_PhoenixAssurance.jpeg",
         "fulltime":true,
-        "technical":false
+        "technical":false,
+        "domain":"Financial Services"
     },
     {
         "type":"Job",
@@ -174,7 +183,8 @@
         "link":"",
         "logo":"assets/Job_IndoAfricanAutoParts.png",
         "fulltime":false,
-        "technical":false
+        "technical":false,
+        "domain":"Retail"
     },
     {
         "type":"Job",
@@ -192,7 +202,8 @@
         "link":"https://www.dropbox.com/scl/fi/fce6u3e3dof8ouukizhys/Alumni-Ambassador-Program-Letter.pdf?rlkey=aid1i1oos83tjdhxwtroclbn8&st=cbxqmoqy&dl=0",
         "logo":"assets/Job_TempleUniversity.png",
         "fulltime":false,
-        "technical":false
+        "technical":false,
+        "domain":"Education"
     },
     {
         "type":"Job",
@@ -210,7 +221,8 @@
         "link":"https://www.dropbox.com/scl/fi/iy2ky78atqoctjaqsbhgc/MIC-Global-Risks-Letter.pdf?rlkey=hulygxfexyaapsze20b4xgcxt&st=0h1gtrj5&dl=0",
         "logo":"assets/Job_MICGlobalRisks.png",
         "fulltime":true,
-        "technical":false
+        "technical":false,
+        "domain":"Financial Services"
     },
     {
         "type":"Job",
@@ -229,7 +241,8 @@
         "link":"https://www.dropbox.com/scl/fi/ggbnwtjaxdus1v9lfoyrq/Alliance-Insurance-Internship.pdf?rlkey=x85t0aypv1vom87uv3q1kf2ot&st=rmzgt7sw&dl=0",
         "logo":"assets/Job_AllianceInsuranceCorporation.jpeg",
         "fulltime":true,
-        "technical":false
+        "technical":false,
+        "domain":"Financial Services"
     },
     {
         "type":"Student",
@@ -246,7 +259,8 @@
         "link":"https://kunaljeshang.wordpress.com/douglas-college/",
         "logo":"assets/Student_DouglasCollege.jpeg",
         "fulltime":true,
-        "technical":true
+        "technical":true,
+        "domain":"Education"
     },
     {
         "type":"Student",
@@ -265,7 +279,8 @@
         "link":"https://kunaljeshang.wordpress.com/professional-stuff/",
         "logo":"assets/Student_TempleUniversity.png",
         "fulltime":true,
-        "technical":false
+        "technical":false,
+        "domain":"Education"
     },
     {
         "type":"Volunteer",
@@ -281,6 +296,7 @@
         "link":"https://www.dropbox.com/scl/fo/itrf4tv891bkntnndzsos/AIenBwx0DOyhr0Q95EvoK4s?rlkey=qxcikcytqtqwwjogpv2z58e8i&st=4ht7cdqw&dl=0",
         "logo":"assets/Volunteer_CertifiedListenersSociety.jpeg",
         "fulltime":false,
-        "technical":false
+        "technical":false,
+        "domain":"Non-Profit"
     }
 ]
