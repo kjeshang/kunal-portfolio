@@ -1,11 +1,16 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
-    <div class="sm:p-2">
-        <app-plotly-bar-chart class="h-96" [inputData]="portfolioStore.skillChart()" />
-    </div>
-    <div class="sm:p-2">
-        <app-plotly-pie-chart class="h-96" [inputData]="portfolioStore.technologyChart()" />
-    </div>
-    <div class="sm:p-2">
-        <app-plotly-pie-chart class="h-96" [inputData]="portfolioStore.domainChart()" />
+<div class="block">
+    <div cdkScrollable class="my-virtual-scroll-viewport">
+        <div class="p-2 grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
+            <div class="sm:p-2">
+                <app-plotly-bar-chart class="h-96" [inputData]="portfolioStore.skillChart()" />
+            </div>
+            <div class="sm:p-2">
+                <app-plotly-pie-chart class="h-96" [inputData]="portfolioStore.technologyChart()" />
+            </div>
+            <div class="sm:p-2">
+                <app-plotly-pie-chart class="h-96" [inputData]="portfolioStore.domainChart()" />
+            </div>
+        </div>
     </div>
 </div>
+

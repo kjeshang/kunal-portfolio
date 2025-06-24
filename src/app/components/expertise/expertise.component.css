@@ -1,5 +1,4 @@
 .my-virtual-scroll-viewport {
-  height: 100vh; /* Or whatever fixed height you want for the scrollable area */
-  /* You might also want to set a max-height and overflow if needed */
-  /* overflow-y: auto; is usually handled by cdk-virtual-scroll-viewport itself */
+  height: 100vh;
+  overflow-y:scroll;
 }
