@@ -4,10 +4,26 @@
 
 ## Project Structure
 
+### Pages
+
 * Header Component (containing Nav bar)
 * Hero Component
 * About Component
 * Projects Component
+
+### Components
+
+* About section
+* Connect bottom panel
+* Contact dialog window
+* Container
+* Expertise section
+* Header 
+* Hero section
+* Plotly bar chart
+* Plotly pie chart
+* Projects section
+* Timeline section
 
 ## Packages
 
