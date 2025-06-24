@@ -159,5 +159,10 @@ export const PortfolioStore = signalStore(
                 careerData()
             );
         }),
+        careerTypeChart: computed(() => {
+            return chartCalcs.getCareerTypeBarChartData(
+                careerData()
+            )
+        }),
     }))
 );

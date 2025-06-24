@@ -102,9 +102,74 @@ export class PortfolioChartService {
         return chartData;
     }
     
-    getDomainPieChartData(careerData: Career[]){
+    getDomainPieChartData(careerData: Career[]): PlotlyPieChartData{
+        const careerViewData: CareerView[] =  this.getCareerViewData(careerData).filter((el: CareerView) => el.type === 'Job');
+
+        const uniqueDomains: string[] = chain(careerViewData)
+            .map(item => item.domain)
+            .uniq()
+            .sort()
+            .value();
+
+        let data: {domain: string, count: number}[] = [];
+
+        for(let i=0; i < uniqueDomains.length; i++){
+            const domain: string = uniqueDomains[i];
+            const count: number = chain(careerViewData)
+                .filter((item: CareerView) => item.type === "Job")
+                .filter((item: CareerView) => item.domain === domain)
+                .sumBy('yearsOfExperience')
+                .value();
+            data.push({domain, count});
+        }
+
+        const chartData: PlotlyPieChartData = {
+            labels:data.map(item => item.domain),
+            values:data.map(item => item.count),
+            title:'Domain',
+            hole: 0.6
+        }
+
+        return chartData;
+    }
+
+    getCareerTypeBarChartData(careerData: Career[]){
+        const careerViewData: CareerView[] =  this.getCareerViewData(careerData);
+
+        const uniqueTypes: string[] = chain(careerViewData)
+            .map(item => item.type)
+            .uniq()
+            .sort()
+            .value();
+        console.log(uniqueTypes);
+        
+        let data: {type: string, count: number}[] = [];
+
+        for(let i=0; i < uniqueTypes.length; i++){
+            const type: string = uniqueTypes[i];
+            const count: number = chain(careerViewData)
+                .filter((item: CareerView) => item.type === type)
+                .sumBy('yearsOfExperience')
+                .value();
+            data.push({type, count});
+        }
+
+        const chartData: PlotlyBarChartData = {
+            x:data.map(item => item.type),
+            y:data.map(item => item.count),
+            title:'Career Type',
+            height:300
+        }
+        return chartData;
+    }
+
+    // Private Functions Here -------------------------------------------------------------
+
+    /**
+     * Get Career View Data
+     */
+    getCareerViewData(careerData: Career[]): CareerView[] {
         const careerViewData: CareerView[] =  chain(careerData)
-        .filter((el: Career) => el.type === 'Job')
         .map((item: Career) => {
             const parsedStartDate: number = DateTime.fromFormat(item.startDate, "MMM yyyy", { locale: "en" }).toMillis();
             const parsedEndDate: number = item.endDate !== "Current" ? DateTime.fromFormat(item.endDate, "MMM yyyy", { locale: "en" }).toMillis() : Infinity;
@@ -129,37 +194,7 @@ export class PortfolioChartService {
             return result;
         })
         .value();
-
-        const uniqueDomains: string[] = chain(careerViewData)
-            .map(item => item.domain)
-            .uniq()
-            .sort()
-            .value();
-        console.log(uniqueDomains);
-
-        let data: {domain: string, count: number}[] = [];
-
-        for(let i=0; i < uniqueDomains.length; i++){
-            const domain: string = uniqueDomains[i];
-            const count: number = chain(careerViewData)
-                .filter((item: CareerView) => item.type === "Job")
-                .filter((item: CareerView) => item.domain === domain)
-                .sumBy('yearsOfExperience')
-                .value();
-            data.push({domain, count});
-        }
-
-        const chartData: PlotlyPieChartData = {
-            labels:data.map(item => item.domain),
-            values:data.map(item => item.count),
-            title:'Domain',
-            hole: 0.6
-        }
-
-        console.log(data);
-        console.log(chartData);
-
-        return chartData;
+        return careerViewData;
     }
         
 }
