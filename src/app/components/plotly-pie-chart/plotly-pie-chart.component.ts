@@ -20,7 +20,8 @@ export class PlotlyPieChartComponent implements OnChanges {
       {
         values:[],
         labels:[],
-        type:'pie'
+        type:'pie',
+        hole: 1,
       }
     ],
     layout: {
@@ -29,8 +30,11 @@ export class PlotlyPieChartComponent implements OnChanges {
     },
     config:{
       displayModeBar: false,
-      responsive: true
+      responsive: true,
     },
+    legend: {
+      itemclick: false
+    }
   }
   
   ngOnChanges(changes: SimpleChanges): void {
@@ -38,6 +42,7 @@ export class PlotlyPieChartComponent implements OnChanges {
       this.graph.data[0].values = this.inputData.values as never[];
       this.graph.data[0].labels = this.inputData.labels as never[];
       this.graph.layout.title.text = this.inputData.title;
+      this.graph.data[0].hole = this.inputData.hole;
     }
   }
 

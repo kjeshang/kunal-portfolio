@@ -18,6 +18,7 @@ export interface PlotlyPieChartData {
     labels: string[];
     values: number[];
     title: string;
+    hole: number;
 }
 
 export interface Career {

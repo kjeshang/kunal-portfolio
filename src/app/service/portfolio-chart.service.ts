@@ -1,6 +1,7 @@
-import { Injectable } from "@angular/core";
-import { PlotlyBarChartData, PlotlyPieChartData, Project } from "../models/portfolio-models";
-import { chain } from "lodash";
+import { inject, Injectable } from "@angular/core";
+import { Career, CareerView, PlotlyBarChartData, PlotlyPieChartData, Project } from "../models/portfolio-models";
+import { chain, uniqBy } from "lodash";
+import { DateTime, Duration } from "luxon";
 
 @Injectable({providedIn:'root'})
 export class PortfolioChartService {
@@ -47,7 +48,8 @@ export class PortfolioChartService {
         const chartData: PlotlyPieChartData = {
             labels:data.map(item => item.skill),
             values:data.map(item => item.count),
-            title:'Skills'
+            title:'Skills',
+            hole: 0,
         }
         return chartData;
     }
@@ -94,9 +96,70 @@ export class PortfolioChartService {
         const chartData: PlotlyPieChartData = {
             labels:data.map(item => item.technology),
             values:data.map(item => item.count),
-            title:'Technology'
+            title:'Technology',
+            hole: 0,
         }
         return chartData;
     }
+    
+    getDomainPieChartData(careerData: Career[]){
+        const careerViewData: CareerView[] =  chain(careerData)
+        .filter((el: Career) => el.type === 'Job')
+        .map((item: Career) => {
+            const parsedStartDate: number = DateTime.fromFormat(item.startDate, "MMM yyyy", { locale: "en" }).toMillis();
+            const parsedEndDate: number = item.endDate !== "Current" ? DateTime.fromFormat(item.endDate, "MMM yyyy", { locale: "en" }).toMillis() : Infinity;
+            
+            let yearsOfExperience: number = 0;
+            if(item.endDate === 'Current'){
+                yearsOfExperience = Duration.fromMillis(DateTime.now().toMillis() - parsedStartDate).as('years');
+            }
+            else {
+                yearsOfExperience = Duration.fromMillis(parsedEndDate - parsedStartDate).as('years');
+            }
 
+            if(!item.fulltime){
+                yearsOfExperience = yearsOfExperience / 2;
+            }
+            const result: CareerView = {
+                ...item,
+                parsedStartDate,
+                parsedEndDate,
+                yearsOfExperience
+            }
+            return result;
+        })
+        .value();
+
+        const uniqueDomains: string[] = chain(careerViewData)
+            .map(item => item.domain)
+            .uniq()
+            .sort()
+            .value();
+        console.log(uniqueDomains);
+
+        let data: {domain: string, count: number}[] = [];
+
+        for(let i=0; i < uniqueDomains.length; i++){
+            const domain: string = uniqueDomains[i];
+            const count: number = chain(careerViewData)
+                .filter((item: CareerView) => item.type === "Job")
+                .filter((item: CareerView) => item.domain === domain)
+                .sumBy('yearsOfExperience')
+                .value();
+            data.push({domain, count});
+        }
+
+        const chartData: PlotlyPieChartData = {
+            labels:data.map(item => item.domain),
+            values:data.map(item => item.count),
+            title:'Domain',
+            hole: 0.6
+        }
+
+        console.log(data);
+        console.log(chartData);
+
+        return chartData;
+    }
+        
 }

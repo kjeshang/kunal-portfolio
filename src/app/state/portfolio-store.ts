@@ -132,6 +132,7 @@ export const PortfolioStore = signalStore(
                 projectData()
             )
         }),
+        // About Page Related
         skillChart: computed(() => {
             return chartCalcs.getSkillBarChartData(
                 projectData()
@@ -142,7 +143,6 @@ export const PortfolioStore = signalStore(
                 projectData()
             );
         }),
-        // About Page Related
         filteredCareerData: computed(() => {
             return calcs.getFilteredCareerData(
                 careerData(),
@@ -153,6 +153,11 @@ export const PortfolioStore = signalStore(
             return calcs.getUniqueType(
                 careerData()
             );
-        })
+        }),
+        domainChart: computed(() => {
+            return chartCalcs.getDomainPieChartData(
+                careerData()
+            );
+        }),
     }))
 );
