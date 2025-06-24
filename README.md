@@ -9,6 +9,14 @@
 * About Component
 * Projects Component
 
+## Packages
+
+* Angular Material
+* Lodash
+* SignalStore
+* Luxon
+* Plotly
+
 > This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
 
 ## Development server
