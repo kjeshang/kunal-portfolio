@@ -25,7 +25,8 @@ export class PortfolioChartService {
             x:data.map(item => item.skill),
             y:data.map(item => item.count),
             title:'Skills',
-            height:400
+            height:400,
+            orientation:'v'
         }
         return chartData;
     }
@@ -73,7 +74,8 @@ export class PortfolioChartService {
             x:data.map(item => item.technology),
             y:data.map(item => item.count),
             title:'Technology',
-            height:300
+            height:300,
+            orientation:'v'
         }
         return chartData;
     }
@@ -155,10 +157,11 @@ export class PortfolioChartService {
         }
 
         const chartData: PlotlyBarChartData = {
-            x:data.map(item => item.type),
-            y:data.map(item => item.count),
+            x:data.map(item => item.count),
+            y:data.map(item => item.type),
             title:'Career Type',
-            height:300
+            height:300,
+            orientation:'h'
         }
         return chartData;
     }
