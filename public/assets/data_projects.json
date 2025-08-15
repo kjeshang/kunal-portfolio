@@ -1,5 +1,13 @@
 [
     {
+        "title":"Nespresso Suite",
+        "description":"This is a web application that is designed as a Software as a Service to assist with day-to-day operational tasks conducted by Nestle Nespresso management. This project was created with the help of the Angular framework, and packages such as SignalStore, Lodash, Plotly, and CurrencyJS.",
+        "link":"https://github.com/kjeshang/nespresso-suite",
+        "image":"assets/Project_Nespresso.jpeg",
+        "skill":"Frontend Development",
+        "technology":"Angular"
+    },
+    {
         "title":"French Learning Blog Web Application",
         "description":"This is an updated version of my french learning blog. The application retrieves the actual blog posts from a separate GitHub Repository that serves as a static-external backend. This project was created with the help of the Angular framework, and packages such as SignalStore, Lodash, Plotly, Luxon, and Ngx-Markdown.",
         "link":"https://github.com/kjeshang/my-french-learning-blog-updated",
