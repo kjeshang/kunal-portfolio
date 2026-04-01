@@ -1,7 +1,7 @@
 [
     {
         "title":"Maven Analytics Data Projects Web Application",
-        "description":"This is an updated version of my Maven Analytics Data Projects website whereby it acts as frontend/portfolio to showcase the various projects completed so far in the Maven Analytics Data Playground Project. It is a multi-component single page application created with the help of the Angular framework, and packages such as Angular Material, SignalStore, and Lodash.",
+        "description":"This is an updated version of my Maven Analytics Data Projects website. It acts as frontend/portfolio to showcase the various projects completed so far in the Maven Analytics Data Playground Project. It is a multi-component single page application created with the help of the Angular framework, and packages such as Angular Material, SignalStore, and Lodash.",
         "link":"https://github.com/kjeshang/kunal-maven-analytics-data-projects-updated",
         "image":"assets/Project_MavenAnalytics.jpg",
         "skill":"Frontend Development",
