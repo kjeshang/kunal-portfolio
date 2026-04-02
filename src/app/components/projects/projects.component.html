@@ -1,120 +1,91 @@
 <app-container>
     @if(portfolioStore.loadingProjectData() == true){
-        <div class="flex items-center justify-center my-40">
-            <mat-spinner></mat-spinner>
-        </div>
+    <div class="flex items-center justify-center my-40">
+        <mat-spinner></mat-spinner>
+    </div>
     }
     @else {
-        <div 
-            [formGroup]="projectForm" 
-            class="bg-gray-700"
-        >
-            <div class="flex flex-col sm:flex-row 
-                sm:items-center sm:gap-4"
-            >
-                <mat-form-field 
-                    class="p-2 mt-1 w-full 
-                        sm:mt-1 sm:w-100"
-                >
-                    <mat-label>Search</mat-label>
-                    <input 
-                        matInput 
-                        type="text" 
-                        formControlName="query"
-                        (input)="onQueryInput()"
-                        placeholder="Search Keyword"
-                    >
-                </mat-form-field>
-                <div class="hidden sm:block">
-                    <mat-form-field class="p-2 w-full
-                    sm:mt-1 sm:w-70"
-                >
+    <div [formGroup]="projectForm" class="bg-gray-700">
+        <div class="flex flex-col sm:flex-row 
+                sm:items-center sm:gap-4">
+            <mat-form-field class="p-2 mt-1 w-full 
+                        sm:mt-1 sm:w-100">
+                <mat-label>Search</mat-label>
+                <input matInput type="text" formControlName="query" (input)="onQueryInput()"
+                    placeholder="Search Keyword">
+            </mat-form-field>
+            <div class="hidden sm:block">
+                <mat-form-field class="p-2 w-full
+                    sm:mt-1 sm:w-70">
                     <mat-label>Skills</mat-label>
-                        <mat-select 
-                            multiple="true"
-                            formControlName="skills"
-                            placeholder="Select Skills"
-                            (selectionChange)="onSelectSkill($event)"
-                        >
-                            @for (item of portfolioStore.uniqueSkills(); track item) {
-                                <mat-option [value]="item">{{item}}</mat-option>
-                            }
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field class="p-2 w-full
-                        sm:mt-1 sm:w-70"
-                    >
+                    <mat-select multiple="true" formControlName="skills" placeholder="Select Skills"
+                        (selectionChange)="onSelectSkill($event)">
+                        @for (item of portfolioStore.uniqueSkills(); track item) {
+                        <mat-option [value]="item">{{item}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="p-2 w-full
+                        sm:mt-1 sm:w-70">
                     <mat-label>Technologies</mat-label>
-                        <mat-select 
-                            multiple="true"
-                            placeholder="Select Technologies"
-                            formControlName="technologies"
-                            (selectionChange)="onSelectTechnology($event)"
-                        >
-                            @for (item of portfolioStore.uniqueTechnologies(); track item) {
-                                <mat-option [value]="item">{{item}}</mat-option>
-                            }
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="hidden
-                    sm:flex sm:py-2 sm:justify-end sm:mt-0 sm:ml-auto"
-                >
-                    <mat-button-toggle-group 
-                        formControlName="order" 
-                        (change)="onOrderButtonToggle($event)"
-                        class="w-auto 
-                            sm:mx-2"
-                    >
-                        <mat-button-toggle value="asc" class="!bg-gray-800 !text-white hover:!bg-gray-600">Asc</mat-button-toggle>
-                        <mat-button-toggle value="desc" class="!bg-gray-800 !text-white hover:!bg-gray-600">Desc</mat-button-toggle>
-                    </mat-button-toggle-group>
-                </div>
+                    <mat-select multiple="true" placeholder="Select Technologies" formControlName="technologies"
+                        (selectionChange)="onSelectTechnology($event)">
+                        @for (item of portfolioStore.uniqueTechnologies(); track item) {
+                        <mat-option [value]="item">{{item}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="hidden
+                    sm:flex sm:py-2 sm:justify-end sm:mt-0 sm:ml-auto">
+                <mat-button-toggle-group formControlName="order" (change)="onOrderButtonToggle($event)" class="w-auto 
+                            sm:mx-2">
+                    <mat-button-toggle value="asc"
+                        class="!bg-gray-800 !text-white hover:!bg-gray-600">Asc</mat-button-toggle>
+                    <mat-button-toggle value="desc"
+                        class="!bg-gray-800 !text-white hover:!bg-gray-600">Desc</mat-button-toggle>
+                </mat-button-toggle-group>
             </div>
         </div>
-        <div class="bg-gray-200 grid grid-cols-1 gap-4 p-5 
-            sm:grid-cols-4"
-        >
-            @for(item of portfolioStore.filteredProjectData(); track $index){
-                <div class="flex items-center h-full">
-                    <mat-card appearance="outlined" class="my-auto h-full">
-                        <mat-card-header>
-                            <div mat-card-avatar>
-                                <img mat-card-image [src]="item.image" class="h-10 w-15">
-                            </div>
-                            <div class="flex items-center px-2 mb-3 text-center">
-                                <p class="font-semibold">{{ item.title }}</p>
-                            </div>
-                        </mat-card-header>
-                        <mat-card-subtitle>
-                            <div class="text-center px-2 mb-3 mt-1">
-                                <button 
-                                    mat-stroked-button
-                                    (click)="onClickSkillButton(item.skill)"
-                                >
-                                    <span class="font-mono">{{ item.skill }}</span>
-                                </button>
-                            </div>
-                        </mat-card-subtitle>
-                        <mat-card-content>
-                            <p class="tracking-wide">{{ item.description }}</p>
-                        </mat-card-content>
-                        <mat-card-footer>
-                            <div class="flex items-end justify-center py-2 space-x-2">
-                                <mat-chip
-                                    (click)="onClickTechnologyMatChip(item.technology)"
-                                >
-                                    {{ item.technology }}
-                                </mat-chip>
-                                <button mat-button>
-                                    <a [href]="item.link" target="_blank">View Here</a>
-                                </button>
-                            </div>
-                        </mat-card-footer>
-                    </mat-card>
-                </div>
-            }
+    </div>
+    <div class="bg-gray-200 grid grid-cols-1 gap-4 p-5 
+            sm:grid-cols-4">
+        @for(item of portfolioStore.filteredProjectData(); track $index){
+        <div class="flex items-center h-full">
+            <mat-card appearance="outlined" class="my-auto h-full">
+                <mat-card-header>
+                    <div mat-card-avatar>
+                        <img mat-card-image [src]="item.image" class="h-10 w-15">
+                    </div>
+                    <div class="flex items-center px-2 mb-3 text-center">
+                        <p class="font-semibold">{{ item.title }}</p>
+                    </div>
+                </mat-card-header>
+                <mat-card-subtitle>
+                    <div class="text-center px-2 mb-3 mt-1">
+                        <button mat-stroked-button (click)="onClickSkillButton(item.skill)">
+                            <span class="font-mono">{{ item.skill }}</span>
+                        </button>
+                    </div>
+                </mat-card-subtitle>
+                <mat-card-content>
+                    <p class="tracking-wide">{{ item.description }}</p>
+                </mat-card-content>
+                <mat-card-footer>
+                    <div class="flex items-end justify-center py-2 space-x-2">
+                        <mat-chip (click)="onClickTechnologyMatChip(item.technology)">
+                            {{ item.technology }}
+                        </mat-chip>
+                        <div class="relative top-1">
+                            <button mat-button>
+                                <a [href]="item.link" target="_blank">View Here</a>
+                            </button>
+                        </div>
+                    </div>
+                </mat-card-footer>
+            </mat-card>
         </div>
+        }
+    </div>
     }
 </app-container>
-
