@@ -8,16 +8,7 @@ import { PortfolioStore } from './state/portfolio-store';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'kunal-portfolio';
   portfolioStore = inject(PortfolioStore);
-
-  ngOnInit(): void {
-    this.loadData().then(() => console.log("Data Loaded!"));
-  }
-
-  async loadData(): Promise<void>{
-    this.portfolioStore.loadProjectData();
-    this.portfolioStore.loadCareerData();
-  }
 }

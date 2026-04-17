@@ -48,13 +48,13 @@ export const PortfolioStore = signalStore(
     withMethods(
         (
             store,
-            db = inject(PortfolioService),
+            db: PortfolioService = inject(PortfolioService),
         ) => ({
             // Loading Related
             async loadProjectData(){
                 patchState(store, {loadingProjectData: true})
                 const projectData: Project[] = await db.getDataForProjects();
-                patchState(store, (state) => ({
+                patchState(store, (state: PortfolioState) => ({
                     projectData: projectData, 
                     loadingProjectData: false, 
                 }));
@@ -62,35 +62,35 @@ export const PortfolioStore = signalStore(
             async loadCareerData(){
                 patchState(store, {loadingCareerData: true})
                 const careerData: Career[] = await db.getDataForCareer();
-                patchState(store, (state) => ({
+                patchState(store, (state: PortfolioState) => ({
                     careerData: careerData, 
                     loadingCareerData: false, 
                 }));
             },
             // Project Page Related
             async updateQueryFilter(queryFilter: string){
-                patchState(store, (state) => ({
+                patchState(store, (state: PortfolioState) => ({
                     query: queryFilter
                 }))
             },
             async updateOrderFilter(orderFilter: 'none' | 'asc' | 'desc'){
-                patchState(store, (state) => ({
+                patchState(store, (state: PortfolioState) => ({
                     order: orderFilter
                 }))
             },
             async updateSelectedSkillsFilter(skillFilter: string[]){
-                patchState(store, (state) => ({
+                patchState(store, (state: PortfolioState) => ({
                     selectedSkills: skillFilter
                 }))
             },
             async updateSelectedTechnologiesFilter(technologyFilter: string[]){
-                patchState(store, (state) => ({
+                patchState(store, (state: PortfolioState) => ({
                     selectedTechnologies: technologyFilter
                 }))
             },
             // About Page Related
             async updateSelectedTypeFilter(typeFilter: string[]){
-                patchState(store, (store) => ({
+                patchState(store, (store: PortfolioState) => ({
                     selectedType: typeFilter
                 }))
             }
@@ -109,8 +109,8 @@ export const PortfolioStore = signalStore(
             // About Page Related
             selectedType
         },
-        calcs = inject(PortfolioCalcsService),
-        chartCalcs = inject(PortfolioChartService)
+        calcs: PortfolioCalcsService = inject(PortfolioCalcsService),
+        chartCalcs: PortfolioChartService = inject(PortfolioChartService)
     ) => ({
         // Project Page Related
         filteredProjectData: computed(() => {
